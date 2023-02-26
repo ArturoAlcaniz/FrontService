@@ -9,9 +9,9 @@ async function handleBuyCoins(id: string, thisComponent: any): Promise<string> {
     await buyCoinsRequest(id).then(
         (response) => {
             if (response.status == 200) {
-                document.cookie = `coins=${response.data.COINS};`;
+                document.cookie = `coins=${response.data.coins};`;
                 thisComponent.headerLogged.current.changeCoins(
-                    response.data.COINS
+                    response.data.coins
                 );
                 msgResult =
                     obtainTextTranslated["requestOK"][response.data.message[0]];

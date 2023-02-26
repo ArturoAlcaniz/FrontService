@@ -34,12 +34,12 @@ function handleLoginToBack(thisComponent, idToken: string) {
                     requestOK: lista,
                     requestErrors: new Map<string, string>(),
                 });
-                document.cookie = `username=${response.data.USERNAME};`;
-                document.cookie = `email=${response.data.EMAIL};`;
-                document.cookie = `coins=${response.data.COINS};`;
-                document.cookie = `avatar=${response.data.AVATAR};`;
-                document.cookie = `rol=${response.data.ROL};`;
-                document.cookie = `admin=${response.data.ROL === "ADMIN"}`;
+                document.cookie = `username=${response.data.userName};`;
+                document.cookie = `email=${response.data.email};`;
+                document.cookie = `coins=${response.data.coins};`;
+                document.cookie = `avatar=${response.data.avatar};`;
+                document.cookie = `rol=${response.data.rol};`;
+                document.cookie = `admin=${response.data.rol === "ADMIN"}`;
                 setTimeout(() => {
                     Router.push("buy");
                 }, 1000);
@@ -79,12 +79,12 @@ function handleLogin2(event: any) {
                     requestOK: lista,
                     requestErrors: new Map<string, string>(),
                 });
-                document.cookie = `username=${response.data.USERNAME};`;
-                document.cookie = `email=${response.data.EMAIL};`;
-                document.cookie = `coins=${response.data.COINS};`;
-                document.cookie = `avatar=${response.data.AVATAR};`;
-                document.cookie = `rol=${response.data.ROL};`;
-                document.cookie = `admin=${response.data.ROL === "ADMIN"}`;
+                document.cookie = `username=${response.data.userName};`;
+                document.cookie = `email=${response.data.email};`;
+                document.cookie = `coins=${response.data.coins};`;
+                document.cookie = `avatar=${response.data.avatar};`;
+                document.cookie = `rol=${response.data.rol};`;
+                document.cookie = `admin=${response.data.rol === "ADMIN"}`;
                 setTimeout(() => {
                     Router.push("buy");
                 }, 1000);

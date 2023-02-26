@@ -74,10 +74,10 @@ function handleRedeemCode(event: any) {
                         formError: "",
                         requestOK: lista,
                         requestErrors: new Map<string, string>(),
-                        coins: response.data.COINS,
+                        coins: response.data.coins,
                     },
                     this.headerViewRef.current.setState({
-                        coins: response.data.COINS,
+                        coins: response.data.coins,
                     })
                 );
             }
