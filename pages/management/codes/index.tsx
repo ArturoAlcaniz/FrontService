@@ -42,12 +42,12 @@ export default class CodesManagePage extends CustomBasicPageLogged{
                             <tbody>
                                 {this.state.codes && this.state.codes.length>0 && this.state.codes.map(code => {
                                     return (
-                                        <tr key={code.ID}>
-                                            <th>{code.ID}</th>
-                                            <td>{code.COINS}</td>
-                                            <td>{code.STARTS}</td>
-                                            <td>{code.ENDS}</td>
-                                            <td>{code.AMOUNT}</td>
+                                        <tr key={code.id}>
+                                            <th>{code.id}</th>
+                                            <td>{code.coins}</td>
+                                            <td>{code.starts}</td>
+                                            <td>{code.ends}</td>
+                                            <td>{code.amount}</td>
                                         </tr>
                                     );
                                 })}

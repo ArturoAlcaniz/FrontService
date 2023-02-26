@@ -103,9 +103,9 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
                                     <div className="media-scroller snaps-inline">
                                         { this.state.imagesAlreadyAdded && this.state.imagesAlreadyAdded.length>0 && this.state.imagesAlreadyAdded.map(image => {
                                             return (
-                                                <div key={image.ID} className="media-element">
+                                                <div key={image.id} className="media-element">
                                                     <i onClick={() => {this.deleteImageAlreadyAdded(image)}} className="gg-trash"></i>
-                                                    <Image src={`/api/products/image/${image.NAME}`} max-width={300} max-heigh={200} width={300} height={200} alt="Product Image"/>
+                                                    <Image src={`/api/products/image/${image.name}`} max-width={300} max-heigh={200} width={300} height={200} alt="Product Image"/>
                                                 </div>
                                             )
                                         })

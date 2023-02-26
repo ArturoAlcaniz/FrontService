@@ -43,12 +43,12 @@ export default class AllProductsPage extends CustomBasicPage{
                     <ul className="ListProducts">
                         {this.state.products && this.state.products.length>0 && this.state.products.map(product => {
                             return (
-                                <li key={product.ID}>
+                                <li key={product.id}>
                                     <div className="box clickable" onClick={() => {Router.push('login')}}>
                                         <div className="content">
                                             <div>
                                                 <Image 
-                                                    src={product.IMAGES[0] ? `/api/products/image/${product.IMAGES[0].NAME}` : `/api/products/image`} 
+                                                    src={product.images[0] ? `/api/products/image/${product.images[0].name}` : `/api/products/image`} 
                                                     alt="Product Image"
                                                     width={300}
                                                     height={200}
@@ -56,9 +56,9 @@ export default class AllProductsPage extends CustomBasicPage{
                                                 />                                            
                                             </div>
                                             <p>
-                                                <strong>{product.PRODUCTNAME}</strong><br></br>
+                                                <strong>{product.productName}</strong><br></br>
                                                 <div className="productPrice">
-                                                    {product.PRICE}
+                                                    {product.price}
                                                 </div>
                                                 <div className="productCoin">
                                                     {' Coins'}
