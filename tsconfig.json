@@ -23,6 +23,6 @@
         "isolatedModules": true,
         "jsx": "preserve"
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts", "../entities-lib/src/**/*"],
     "exclude": ["node_modules"]
 }

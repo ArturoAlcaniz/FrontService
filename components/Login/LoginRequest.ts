@@ -1,3 +1,6 @@
+import { LoginDto } from "@root/../entities-lib/src/requests/login.dto";
+import { LoginGoogleDto } from "@root/../entities-lib/src/requests/loginGoogle.dto";
+import { SendCodeLoginDto } from "@root/../entities-lib/src/requests/sendCodeLogin.dto";
 import axios, {AxiosPromise} from "axios";
 
 function obtainAvatar(): AxiosPromise<any> {
@@ -9,33 +12,33 @@ function obtainAvatar(): AxiosPromise<any> {
     });
 }
 
-function sendCodeRequest(thisComponent: any): AxiosPromise<any> {
+function sendCodeRequest(sendCodeLoginDto: SendCodeLoginDto): AxiosPromise<any> {
     return axios({
         method: "post",
         url: "/api/users/login2",
         data: {
-            code: thisComponent.state.code,
+            code: sendCodeLoginDto.code,
         },
     });
 }
 
-function loginGoogleRequest(idToken: string): AxiosPromise<any> {
+function loginGoogleRequest(loginGoogleDto: LoginGoogleDto): AxiosPromise<any> {
     return axios({
         method: "post",
         url: "/api/users/loginGoogle",
         data: {
-            token: idToken,
+            token: loginGoogleDto.token,
         },
     });
 }
 
-function loginRequest(thisComponent: any): AxiosPromise<any> {
+function loginRequest(loginDto: LoginDto): AxiosPromise<any> {
     return axios({
         method: "post",
         url: "/api/users/login",
         data: {
-            email: thisComponent.state.email,
-            pass: thisComponent.state.password,
+            email: loginDto.email,
+            pass: loginDto.pass,
         },
     });
 }

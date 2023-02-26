@@ -8,6 +8,9 @@ import {
 import loginValidation from "./LoginValidation";
 import {getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import {firebaseApp} from "@root/firebase-config";
+import { LoginGoogleDto } from "@root/../entities-lib/src/requests/loginGoogle.dto";
+import { LoginDto } from "@root/../entities-lib/src/requests/login.dto";
+import { SendCodeLoginDto } from "@root/../entities-lib/src/requests/sendCodeLogin.dto";
 
 function handleButtonLoginGoogle() {
     const firebaseAuth = getAuth(firebaseApp);
@@ -22,7 +25,8 @@ function handleButtonLoginGoogle() {
 }
 
 function handleLoginToBack(thisComponent, idToken: string) {
-    loginGoogleRequest(idToken).then(
+    let loginGoogleDto: LoginGoogleDto = {token: idToken}
+    loginGoogleRequest(loginGoogleDto).then(
         (response) => {
             if (response.status == 200) {
                 let lista: Map<string, string> = new Map<string, string>().set(
@@ -67,7 +71,8 @@ function showPass(event: any) {
 function handleLogin2(event: any) {
     event.preventDefault();
 
-    sendCodeRequest(this).then(
+    let sendCodeLoginDto: SendCodeLoginDto = {code: this.state.code}
+    sendCodeRequest(sendCodeLoginDto).then(
         (response) => {
             if (response.status == 200) {
                 let lista: Map<string, string> = new Map<string, string>().set(
@@ -123,7 +128,8 @@ function handleLogin(event: any) {
         return;
     }
 
-    loginRequest(this).then(
+    let loginDto: LoginDto = {email: this.state.pass, pass: this.state.password}
+    loginRequest(loginDto).then(
         (response) => {
             if (response.status == 200) {
                 let lista: Map<string, string> = new Map<string, string>().set(
