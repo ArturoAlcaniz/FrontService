@@ -24,7 +24,7 @@ function RouteGuard({ children }) {
                     document.cookie = `admin=${response.data.rol === "ADMIN"}`;
                     document.cookie = `coins=${response.data.coins};`;
                     
-                    if((publicPaths().includes(path) || (adminPaths().includes(path) && response.data.ROL != "ADMIN")) && router) {
+                    if((publicPaths().includes(path) || (adminPaths().includes(path) && response.data.rol != "ADMIN")) && router) {
                         setAuthorized(false);
                         router.push({
                             pathname: '/buy',
