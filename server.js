@@ -21,12 +21,17 @@ const httpsOptions = {
 
 if(cluster.isMaster){
     console.log(`Master server started on ${process.pid}`);
+    const maximumRestarts = 3;
+    let restartsCount = 0;
     for (let i = 0; i < numCPUs; i++) {
         cluster.fork();
     }
     cluster.on('exit', (worker, code, signal) => {
-        console.log(`Worker ${worker.process.pid} died. Restarting`);
-        cluster.fork();
+        if(restartsCount < maximumRestarts) {
+            restartsCount++;
+            console.log(`Worker ${worker.process.pid} died. Restarting`);
+            cluster.fork();
+        }
     })
 } else {
     console.log(`Cluster server started on ${process.pid}`)
