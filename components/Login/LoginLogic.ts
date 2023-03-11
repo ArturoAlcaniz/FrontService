@@ -2,7 +2,6 @@ import Router from "next/router";
 import {
     loginGoogleRequest,
     loginRequest,
-    obtainAvatar,
     sendCodeRequest,
 } from "./LoginRequest";
 import loginValidation from "./LoginValidation";

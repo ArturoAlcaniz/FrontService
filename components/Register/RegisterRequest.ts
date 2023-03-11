@@ -1,23 +1,25 @@
+import { CreateUserDto } from "@root/../entities-lib/src/requests/createUser.dto";
+import { SendCodeDto } from "@root/../entities-lib/src/requests/sendcode.dto";
 import axios, {AxiosPromise} from "axios";
 
-function registerRequest(thisComponent: any): AxiosPromise<any> {
+function registerRequest(createUser: CreateUserDto): AxiosPromise<any> {
     return axios({
         method: "post",
         url: "/api/users/register2",
         data: {
-            code: thisComponent.state.code,
+            code: createUser.code,
         },
     });
 }
 
-function sendCodeRequest(thisComponent: any): AxiosPromise<any> {
+function sendCodeRequest(sendCode: SendCodeDto): AxiosPromise<any> {
     return axios({
         method: "post",
         url: "/api/users/register",
         data: {
-            username: thisComponent.state.username,
-            email: thisComponent.state.email,
-            pass: thisComponent.state.password,
+            username: sendCode.username,
+            email: sendCode.email,
+            pass: sendCode.pass,
         },
     });
 }
