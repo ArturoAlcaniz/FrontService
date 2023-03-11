@@ -23,6 +23,7 @@
         "isolatedModules": true,
         "jsx": "preserve",
         "experimentalDecorators": true,
+        "types": ["node"],
         "typeRoots": ["./node_module/@types", "./types"]
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts", "../entities-lib/src/**/*"],
