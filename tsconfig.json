@@ -27,8 +27,8 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "types": ["node"],
-        "typeRoots": ["./node_module/@types", "./types"]
+        "typeRoots": ["./node_module/@types", "src/types"]
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts", "../entities-lib/src/**/*"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts", "../entities-lib/src/**/*", "./src/types/*"],
     "exclude": ["node_modules"]
 }
