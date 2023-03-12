@@ -1,6 +1,6 @@
-import { LoginDto } from "@root/../entities-lib/src/requests/login.dto";
-import { LoginGoogleDto } from "@root/../entities-lib/src/requests/loginGoogle.dto";
-import { SendCodeLoginDto } from "@root/../entities-lib/src/requests/sendCodeLogin.dto";
+import { LoginDto } from "@entities-lib/src/requests/login.dto";
+import { LoginGoogleDto } from "@entities-lib/src/requests/loginGoogle.dto";
+import { SendCodeLoginDto } from "@entities-lib/src/requests/sendCodeLogin.dto";
 import axios, {AxiosPromise} from "axios";
 
 function obtainAvatar(): AxiosPromise<any> {

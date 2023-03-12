@@ -1,5 +1,5 @@
-import { CreateUserDto } from "@root/../entities-lib/src/requests/createUser.dto";
-import { SendCodeDto } from "@root/../entities-lib/src/requests/sendcode.dto";
+import { CreateUserDto } from "@entities-lib/src/requests/createUser.dto";
+import { SendCodeDto } from "@entities-lib/src/requests/sendcode.dto";
 import {registerRequest, sendCodeRequest} from "./RegisterRequest";
 import registerValidation from "./RegisterValidation";
 

@@ -7,9 +7,9 @@ import {
 import loginValidation from "./LoginValidation";
 import {getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import {firebaseApp} from "@root/firebase-config";
-import { LoginGoogleDto } from "@root/../entities-lib/src/requests/loginGoogle.dto";
-import { LoginDto } from "@root/../entities-lib/src/requests/login.dto";
-import { SendCodeLoginDto } from "@root/../entities-lib/src/requests/sendCodeLogin.dto";
+import { LoginGoogleDto } from "@entities-lib/src/requests/loginGoogle.dto";
+import { LoginDto } from "@entities-lib/src/requests/login.dto";
+import { SendCodeLoginDto } from "@entities-lib/src/requests/sendCodeLogin.dto";
 
 function handleButtonLoginGoogle() {
     const firebaseAuth = getAuth(firebaseApp);

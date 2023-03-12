@@ -6,6 +6,7 @@
         "declaration": true,
         "removeComments": true,
         "paths": {
+            "@entities-lib/*": ["./../entities-lib/*"],
             "@root/*": ["./*"],
             "@components/*": ["components/*"],
             "@styles/*": ["stylesheets/*"],
