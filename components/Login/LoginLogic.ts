@@ -128,7 +128,7 @@ function handleLogin(event: any) {
     }
 
     let loginDto: LoginDto = {
-        email: this.state.pass,
+        email: this.state.email,
         pass: this.state.password,
     };
     loginRequest(loginDto).then(
