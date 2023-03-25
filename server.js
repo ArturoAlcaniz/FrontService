@@ -2,7 +2,7 @@ const os = require("os");
 const {createServer} = require("https");
 const {parse} = require("url");
 const next = require("next");
-const cluster = require('node:cluster');
+const cluster = require("node:cluster");
 const numCPUs = os.cpus().length;
 
 const dev = process.env.NODE_ENV !== "production";
@@ -19,22 +19,22 @@ const httpsOptions = {
     ),
 };
 
-if(cluster.isMaster){
+if (cluster.isMaster) {
     console.log(`Master server started on ${process.pid}`);
     const maximumRestarts = 3;
     let restartsCount = 0;
     for (let i = 0; i < numCPUs; i++) {
         cluster.fork();
     }
-    cluster.on('exit', (worker, code, signal) => {
-        if(restartsCount < maximumRestarts) {
+    cluster.on("exit", (worker, code, signal) => {
+        if (restartsCount < maximumRestarts) {
             restartsCount++;
             console.log(`Worker ${worker.process.pid} died. Restarting`);
             cluster.fork();
         }
-    })
+    });
 } else {
-    console.log(`Cluster server started on ${process.pid}`)
+    console.log(`Cluster server started on ${process.pid}`);
     main();
 }
 

@@ -26,7 +26,8 @@
         "start_code": "Start date",
         "end_code": "End date",
         "code_name": "Code",
-        "amount": "Amount"
+        "amount": "Amount",
+        "rol": "Rol"
     },
     "explanations": {
         "hello": "Welcome",

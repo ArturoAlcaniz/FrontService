@@ -7,9 +7,9 @@ import {
 import loginValidation from "./LoginValidation";
 import {getAuth, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
 import {firebaseApp} from "@root/firebase-config";
-import { LoginGoogleDto } from "@entities-lib/src/requests/loginGoogle.dto";
-import { LoginDto } from "@entities-lib/src/requests/login.dto";
-import { SendCodeLoginDto } from "@entities-lib/src/requests/sendCodeLogin.dto";
+import {LoginGoogleDto} from "@entities-lib/src/requests/loginGoogle.dto";
+import {LoginDto} from "@entities-lib/src/requests/login.dto";
+import {SendCodeLoginDto} from "@entities-lib/src/requests/sendCodeLogin.dto";
 
 function handleButtonLoginGoogle() {
     const firebaseAuth = getAuth(firebaseApp);
@@ -24,7 +24,7 @@ function handleButtonLoginGoogle() {
 }
 
 function handleLoginToBack(thisComponent, idToken: string) {
-    let loginGoogleDto: LoginGoogleDto = {token: idToken}
+    let loginGoogleDto: LoginGoogleDto = {token: idToken};
     loginGoogleRequest(loginGoogleDto).then(
         (response) => {
             if (response.status == 200) {
@@ -70,7 +70,7 @@ function showPass(event: any) {
 function handleLogin2(event: any) {
     event.preventDefault();
 
-    let sendCodeLoginDto: SendCodeLoginDto = {code: this.state.code}
+    let sendCodeLoginDto: SendCodeLoginDto = {code: this.state.code};
     sendCodeRequest(sendCodeLoginDto).then(
         (response) => {
             if (response.status == 200) {
@@ -127,7 +127,10 @@ function handleLogin(event: any) {
         return;
     }
 
-    let loginDto: LoginDto = {email: this.state.pass, pass: this.state.password}
+    let loginDto: LoginDto = {
+        email: this.state.pass,
+        pass: this.state.password,
+    };
     loginRequest(loginDto).then(
         (response) => {
             if (response.status == 200) {

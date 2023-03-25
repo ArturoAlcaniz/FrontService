@@ -1,5 +1,5 @@
-import { CreateUserDto } from "@entities-lib/src/requests/createUser.dto";
-import { SendCodeDto } from "@entities-lib/src/requests/sendcode.dto";
+import {CreateUserDto} from "@entities-lib/src/requests/createUser.dto";
+import {SendCodeDto} from "@entities-lib/src/requests/sendcode.dto";
 import {registerRequest, sendCodeRequest} from "./RegisterRequest";
 import registerValidation from "./RegisterValidation";
 
@@ -22,7 +22,11 @@ function handleSendCode(event: any) {
         return;
     }
 
-    let sendCode: SendCodeDto = {username: this.state.username, email: this.state.email, pass: this.state.password}
+    let sendCode: SendCodeDto = {
+        username: this.state.username,
+        email: this.state.email,
+        pass: this.state.password,
+    };
     sendCodeRequest(sendCode).then(
         (response) => {
             if (response.status == 200) {
@@ -47,7 +51,7 @@ function handleSendCode(event: any) {
 function handleRegister(event: any) {
     event.preventDefault();
 
-    let createUser: CreateUserDto = {code: this.state.code}
+    let createUser: CreateUserDto = {code: this.state.code};
     registerRequest(createUser).then(
         (response) => {
             if (response.status == 200) {

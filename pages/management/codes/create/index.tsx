@@ -1,7 +1,6 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import { handleChangeCoins, handleChangeId, handleChangeStartCode, handleChangeEndCode, handleChangeAmount } from '@root/components/Management/ManagementLogic';
-import shortid from 'shortid';
 import { handleCreateCode } from '@root/components/Management/Codes/CodesLogic';
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
 

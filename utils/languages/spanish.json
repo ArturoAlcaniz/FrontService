@@ -26,7 +26,8 @@
         "start_code": "Fecha inicio",
         "end_code": "Fecha fin",
         "code_name": "Código",
-        "amount": "Cantidad"
+        "amount": "Cantidad",
+        "rol": "Rol"
     },
     "explanations": {
         "hello": "Bienvenido",

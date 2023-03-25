@@ -1,5 +1,5 @@
-import { CreateUserDto } from "@entities-lib/src/requests/createUser.dto";
-import { SendCodeDto } from "@entities-lib/src/requests/sendcode.dto";
+import {CreateUserDto} from "@entities-lib/src/requests/createUser.dto";
+import {SendCodeDto} from "@entities-lib/src/requests/sendcode.dto";
 import axios, {AxiosPromise} from "axios";
 
 function registerRequest(createUser: CreateUserDto): AxiosPromise<any> {

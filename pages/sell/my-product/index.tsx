@@ -44,11 +44,7 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
         } catch(err) {}
     }
 
-    obtainFields() {
-        return `createProducts  ${this.state.product==null ? 'hidden' : ''}`
-    }
-
-    deleteImageAlreadyAdded(image){
+    #deleteImageAlreadyAdded(image){
         let images: [] = this.state.imagesAlreadyAdded
         
         function equalToImage(element) {
@@ -70,6 +66,7 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
 
         const { formError, productname, category, description, price, startsell, endsell } = this.state
         let msgError = obtainTextTranslated["requestErrors"][this.state.requestErrors.get('modifyProductError')]
+        let fields = `createProducts  ${this.state.product==null ? 'hidden' : ''}`
 
         return (
             <div>
@@ -80,7 +77,7 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
                     </Link>
                 </div>
                 
-                <div className={this.obtainFields()}>
+                <div className={fields}>
                     <form onSubmit={handleModifyProduct.bind(this)}>
                         <div className="card createProductForm">
                             <div className="card-content">
@@ -104,7 +101,7 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
                                         { this.state.imagesAlreadyAdded && this.state.imagesAlreadyAdded.length>0 && this.state.imagesAlreadyAdded.map(image => {
                                             return (
                                                 <div key={image.id} className="media-element">
-                                                    <i onClick={() => {this.deleteImageAlreadyAdded(image)}} className="gg-trash"></i>
+                                                    <i onClick={() => {this.#deleteImageAlreadyAdded(image)}} className="gg-trash"></i>
                                                     <Image src={`/api/products/image/${image.name}`} max-width={300} max-heigh={200} width={300} height={200} alt="Product Image"/>
                                                 </div>
                                             )

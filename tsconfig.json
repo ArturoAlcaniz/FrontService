@@ -30,6 +30,12 @@
         "types": ["node"],
         "typeRoots": ["./node_module/@types", "src/types"]
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts", "src/**/*"],
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "additional.d.ts",
+        "src/**/*"
+    ],
     "exclude": ["node_modules"]
 }
