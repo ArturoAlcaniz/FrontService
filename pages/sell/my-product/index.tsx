@@ -115,10 +115,10 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
                                         {obtainTextTranslated["labels"]["product_category"]}
                                     </label>
                                     <div className="control">
-                                        <select className="select" value={category} onChange={handleChangeCategory.bind(this)} autoComplete="off">
-                                        {this.state.productCategories && this.state.productCategories.length>0 && this.state.productCategories.map(category => {
+                                        <select className="select" onChange={handleChangeCategory.bind(this)} autoComplete="off">
+                                        {this.state.productCategories && this.state.productCategories.length>0 && this.state.productCategories.map(c => {
                                             return (
-                                                <option key={shortid.generate()} value={category}>{category}</option>
+                                                <option selected={c === category} key={shortid.generate()} value={c}>{c}</option>
                                                 );
                                             })
                                         }
