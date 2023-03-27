@@ -1,72 +1,77 @@
 import axios from "axios";
-import { NextRouter, useRouter } from "next/router";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
+/**
+ * RouteGuard component that restricts access to certain pages based on user authentication.
+ * @param {Object} props - Component props.
+ * @param {ReactNode} props.children - Child components to render.
+ * @returns {ReactNode} Authorized child components.
+ */
 function RouteGuard({ children }) {
+  const [authorized, setAuthorized] = useState<boolean>(false);
+  const router = useRouter();
 
-    const [authorized, setAuthorized] = useState(false)
-    const publicPaths: ()  => Array<string> = useCallback(() => { return ['/', '/login', '/register']; }, [])
-    const adminPaths: ()  => Array<string> = useCallback(() => { return ['/management']; }, [])
-    const routing = useRouter()
+  // Public paths that do not require authentication.
+  const publicPaths = ["/", "/login", "/register"];
 
-    useEffect((router: NextRouter = routing) => {
-        const path: string = router.asPath.split('?')[0]
+  // Admin paths that require authentication as an admin user.
+  const adminPaths = ["/management"];
 
-        function authCheck() {
-    
-            axios({
-                method: 'get',
-                url: '/api/sessions/user',
-                data: {},
-            }).then((response: any) => {
-                if(response.status == 200){
-                    document.cookie = `username=${response.data.userName};`;
-                    document.cookie = `admin=${response.data.rol === "ADMIN"}`;
-                    document.cookie = `coins=${response.data.coins};`;
-                    
-                    if((publicPaths().includes(path) || (adminPaths().includes(path) && response.data.rol != "ADMIN")) && router) {
-                        setAuthorized(false);
-                        router.push({
-                            pathname: '/buy',
-                            query: { returnUrl: router.asPath }
-                        },'/buy');
-                    }else{
-                        setAuthorized(true);
-                    }
-                }
-            }, () => {
-                setAuthorized(publicPaths().includes(path))
-                
-                if(!publicPaths().includes(path) && router) {
-                    router.push({
-                        pathname: '/',
-                        query: { returnUrl: router.asPath }
-                    },'/');
-                }
-                
-            });
-            
-        }
+  /**
+   * Check if the user is authorized to access the current page and update the state accordingly.
+   * If the user is not authorized, redirect to the appropriate page.
+   */
+  const authCheck = async () => {
+    try {
+      const response = await axios.get("/api/sessions/user");
+      const { userName, rol, coins } = response.data;
+      document.cookie = `username=${userName}`;
+      document.cookie = `admin=${rol === "ADMIN"}`;
+      document.cookie = `coins=${coins}`;
+      const path = router.asPath.split("?")[0];
 
-        // on initial load - run auth check 
-        authCheck();
+      if (
+        publicPaths.includes(path) ||
+        (adminPaths.includes(path) && rol !== "ADMIN")
+      ) {
+        setAuthorized(false);
+        await router.push({
+          pathname: "/buy",
+          query: { returnUrl: router.asPath },
+        });
+      } else {
+        setAuthorized(true);
+      }
+    } catch (error) {
+      const path = router.asPath.split("?")[0];
+      setAuthorized(publicPaths.includes(path));
+      if (!publicPaths.includes(path)) {
+        await router.push({
+          pathname: "/",
+          query: { returnUrl: router.asPath },
+        });
+      }
+    }
+  };
 
-        // Hide content if the page is not public
-        const hideContent = () => setAuthorized(false);
+  // Run the auth check on initial load and on route change.
+  useEffect(() => {
+    authCheck();
 
-        router.events.on('routeChangeStart', hideContent);
+    // Hide the child components if the user is not authorized.
+    const hideContent = () => setAuthorized(false);
 
-        // on route change complete - run auth check 
-        router.events.on('routeChangeComplete', authCheck)
+    router.events.on("routeChangeStart", hideContent);
+    router.events.on("routeChangeComplete", authCheck);
 
-        // unsubscribe from events in useEffect return function
-        return () => {
-            router.events.off('routeChangeStart', hideContent);
-            router.events.off('routeChangeComplete', authCheck);   
-        }
-    }, [routing, adminPaths, publicPaths]);
+    return () => {
+      router.events.off("routeChangeStart", hideContent);
+      router.events.off("routeChangeComplete", authCheck);
+    };
+  }, []);
 
-    return (authorized && children);
+  return authorized ? children : null;
 }
 
 export { RouteGuard };

@@ -30,34 +30,34 @@ async function handleObtainMyProduct(thisComponent) {
             let end = "";
 
             if (
-                response.data[0].starts != null &&
-                response.data[0].starts.length > 0
+                response.data.starts != null &&
+                response.data.starts.length > 0
             ) {
-                start = response.data[0].starts.slice(
+                start = response.data.starts.slice(
                     0,
-                    response.data[0].starts.length - 8
+                    response.data.starts.length - 8
                 );
             }
 
             if (
-                response.data[0].ends != null &&
-                response.data[0].ends.length > 0
+                response.data.ends != null &&
+                response.data.ends.length > 0
             ) {
-                end = response.data[0].ends.slice(
+                end = response.data.ends.slice(
                     0,
-                    response.data[0].ends.length - 8
+                    response.data.ends.length - 8
                 );
             }
 
             thisComponent.setState({
-                product: response.data[0],
-                productname: response.data[0].productName,
-                description: response.data[0].description,
-                category: response.data[0].category,
-                imagesAlreadyAdded: response.data[0].images,
+                product: response.data,
+                productname: response.data.productName,
+                description: response.data.description,
+                category: response.data.category,
+                imagesAlreadyAdded: response.data.images,
                 startsell: start,
                 endsell: end,
-                price: response.data[0].price,
+                price: response.data.price,
             });
         }
     });
