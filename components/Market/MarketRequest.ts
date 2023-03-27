@@ -47,7 +47,7 @@ function modifyProductRequest(thisComponent: any): AxiosPromise<any> {
 
     let imagesIds = [];
     thisComponent.state.imagesAlreadyAdded.map(function (item) {
-        imagesIds.push(item["ID"]);
+        imagesIds.push(item["id"]);
     });
 
     formData.append("imagesAlreadyAdded", JSON.stringify(imagesIds));
