@@ -4,7 +4,6 @@ import {
     deleteProductRequest,
     modifyProductRequest,
     obtainAllProductsRequest,
-    obtainCategories,
     obtainMyProductRequest,
     obtainMyProductsRequest,
 } from "./MarketRequest";
@@ -140,24 +139,6 @@ function handleModifyProduct(event: any) {
     );
 }
 
-function handleObtainCategories(thisComponent) {
-    obtainCategories().then(
-        (response) => {
-            if (response.status == 200) {
-                thisComponent.setState({
-                    productCategories: response.data,
-                });
-                if (response.data.length > 0) {
-                    thisComponent.setState({
-                        category: response.data[0],
-                    });
-                }
-            }
-        },
-        () => {}
-    );
-}
-
 function handleCreateProduct(event: any) {
     event.preventDefault();
 
@@ -227,7 +208,6 @@ export {
     handleModifyProduct,
     handleDeleteProduct,
     handleObtainAllProducts,
-    handleObtainCategories,
     handleChangeProductName,
     handleChangeCategory,
     handleChangeDescription,

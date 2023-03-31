@@ -45,7 +45,7 @@ function modifyProductRequest(thisComponent: any): AxiosPromise<any> {
     formData.append("endsell", thisComponent.state.endsell);
     formData.append("price", thisComponent.state.price);
 
-    let imagesIds = thisComponent.state.imagesAlreadyAdded ? thisComponent.state.imagesAlreadyAdded.map((item: {id?: string, name?: string}) => {return item?.id}) : []
+    let imagesIds = thisComponent.state.imagesAlreadyAdded ? thisComponent.state.imagesAlreadyAdded.map((item: {id?: string, name?: string}) => item?.id) : []
 
     formData.append("imagesAlreadyAdded", JSON.stringify(imagesIds));
 
@@ -55,14 +55,6 @@ function modifyProductRequest(thisComponent: any): AxiosPromise<any> {
         }
         return axios.post("/api/products/modify", formData);
     }
-}
-
-function obtainCategories(): AxiosPromise<any> {
-    return axios({
-        method: "get",
-        url: "/api/products/obtainCategories",
-        data: [],
-    });
 }
 
 function createProductRequest(thisComponent: any): AxiosPromise<any> {
@@ -102,6 +94,5 @@ export {
     obtainMyProductRequest,
     modifyProductRequest,
     deleteProductRequest,
-    obtainAllProductsRequest,
-    obtainCategories,
+    obtainAllProductsRequest
 };

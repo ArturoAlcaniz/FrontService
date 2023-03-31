@@ -4,6 +4,7 @@ import CustomErrorMessage from '@root/utils/CustomErrorMessage';
 import { handleCreateUser, handleChangeUsername, handleChangeEmail, handleChangePassword, showPass, handleChangeRol, handleChangeConfirmPassword, showCPass } from '@root/components/Management/Users/UsersLogic';
 import passwordStrengthMeter from '@root/components/Commons/PasswordStrengthMeter';
 import shortid from 'shortid';
+import { Rol } from '@entities-lib/src/entities/rolUser.enum'
 
 export default class CreateUserPage extends CustomBasicPageLogged{
     constructor(props: any) {
@@ -21,7 +22,7 @@ export default class CreateUserPage extends CustomBasicPageLogged{
             passwordStrengthText: "",
             showPassword: false,
             showCPassword: false,
-            rolList: [],
+            rolList: Object.values(Rol).map((r: string) => r),
             componentName: "Create user | TI-Shop",
         }
         
