@@ -38,10 +38,7 @@ async function handleObtainMyProduct(thisComponent) {
                 );
             }
 
-            if (
-                response.data.ends != null &&
-                response.data.ends.length > 0
-            ) {
+            if (response.data.ends != null && response.data.ends.length > 0) {
                 end = response.data.ends.slice(
                     0,
                     response.data.ends.length - 8
