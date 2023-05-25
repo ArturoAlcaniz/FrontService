@@ -1,11 +1,12 @@
 import React from 'react'
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
-import { handleChangeCategory, handleChangeDescription, handleChangeEndsell, handleChangePrice, handleChangeProductName, handleChangeStartSell, handleDeleteProduct, handleModifyProduct, handleObtainCategories, handleObtainMyProduct, uploadImageProduct } from '@root/components/Market/MarketLogic';
+import { handleChangeCategory, handleChangeDescription, handleChangeEndsell, handleChangePrice, handleChangeProductName, handleChangeStartSell, handleDeleteProduct, handleModifyProduct, handleObtainMyProduct, uploadImageProduct } from '@root/components/Market/MarketLogic';
 import Link from 'next/link';
 import cookies from 'next-cookies';
 import Image from 'next/image'
 import shortid from 'shortid';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
+import { Category } from '@entities-lib/src/entities/categoryProduct.enum';
 
 export default class ModifyProductPage extends CustomBasicPageLogged{
 
@@ -35,11 +36,10 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
             imagesAlreadyAdded: [],
             images: [],
             product: null,
-            productCategories: [],
+            productCategories: Object.values(Category).map((c: string) => c),
         }
 
         try {
-            handleObtainCategories(this);
             handleObtainMyProduct(this);
         } catch(err) {}
     }
