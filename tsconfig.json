@@ -1,17 +1,35 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "lib": ["es5", "es6", "dom", "dom.iterable", "esnext"],
+        "lib": [
+            "es5",
+            "es6",
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
         "baseUrl": "./",
         "declaration": true,
         "removeComments": true,
         "paths": {
-            "@entities-lib/*": ["./../entities-lib/*"],
-            "@root/*": ["./*"],
-            "@components/*": ["components/*"],
-            "@styles/*": ["stylesheets/*"],
-            "@utils/*": ["utils/*"],
-            "@assets/*": ["assets/*"]
+            "@entities-lib/*": [
+                "./../entities-lib/*"
+            ],
+            "@root/*": [
+                "./*"
+            ],
+            "@components/*": [
+                "components/*"
+            ],
+            "@styles/*": [
+                "stylesheets/*"
+            ],
+            "@utils/*": [
+                "utils/*"
+            ],
+            "@assets/*": [
+                "assets/*"
+            ]
         },
         "allowJs": true,
         "skipLibCheck": true,
@@ -27,8 +45,13 @@
         "jsx": "preserve",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "types": ["node"],
-        "typeRoots": ["./node_module/@types", "src/types"]
+        "types": [
+            "node"
+        ],
+        "typeRoots": [
+            "./node_modules/@types",
+            "src/types"
+        ]
     },
     "include": [
         "next-env.d.ts",
@@ -37,5 +60,7 @@
         "additional.d.ts",
         "src/**/*"
     ],
-    "exclude": ["node_modules"]
+    "exclude": [
+        "node_modules"
+    ]
 }

@@ -56,7 +56,8 @@
         "management": "Management",
         "codes": "Codes",
         "create_code": "Create code",
-        "redeem_code": "Redeem code"
+        "redeem_code": "Redeem code",
+        "create_user": "Create user"
     },
     "requestErrors": {
         "invalid_credentials": "Invalid Credentials",

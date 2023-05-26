@@ -1,6 +1,6 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
-import { handleGoCreateCodes, handleObtainAllCodes } from '@root/components/Management/Codes/CodesLogic';
+import { handleObtainAllCodes } from '@root/components/Management/Codes/CodesLogic';
 import Link from 'next/link';
 
 export default class CodesManagePage extends CustomBasicPageLogged{

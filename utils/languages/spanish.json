@@ -56,7 +56,8 @@
         "management": "Administración",
         "codes": "Códigos",
         "create_code": "Crear código",
-        "redeem_code": "Canjear código"
+        "redeem_code": "Canjear código",
+        "create_user": "Crear usuario"
     },
     "requestErrors": {
         "invalid_credentials": "Credenciales no válidas",

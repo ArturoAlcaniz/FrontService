@@ -1,3 +1,5 @@
+import { obtainAllUsersRequest } from "./UsersRequest";
+
 function showPass(event: any) {
     event.preventDefault();
     this.setState({showPassword: !this.state.showPassword});
@@ -33,6 +35,23 @@ function handleCreateUser(event: any) {
     //TODO: Create user from management
 }
 
+async function handleObtainAllUsers(thisComponent) {
+    await obtainAllUsersRequest().then(
+        (response) => {
+            if (response.status == 200) {
+                let usersArray: Array<any> = [];
+                for (let i = 0; i < response.data.length; i++) {
+                    usersArray.push(response.data[i]);
+                }
+                thisComponent.setState({users: usersArray});
+            }
+        },
+        (error) => {
+            console.log(error);
+        }
+    );
+}
+
 export {
     showCPass,
     showPass,
@@ -42,4 +61,5 @@ export {
     handleChangeConfirmPassword,
     handleChangeRol,
     handleCreateUser,
+    handleObtainAllUsers
 };
