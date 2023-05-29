@@ -27,7 +27,8 @@
         "end_code": "Fecha fin",
         "code_name": "Código",
         "amount": "Cantidad",
-        "rol": "Rol"
+        "rol": "Rol",
+        "actions": "Acciones"
     },
     "explanations": {
         "hello": "Bienvenido",
@@ -57,7 +58,9 @@
         "codes": "Códigos",
         "create_code": "Crear código",
         "redeem_code": "Canjear código",
-        "create_user": "Crear usuario"
+        "create_user": "Crear usuario",
+        "edit": "Edit",
+        "delete": "Delete"
     },
     "requestErrors": {
         "invalid_credentials": "Credenciales no válidas",

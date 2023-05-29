@@ -27,7 +27,8 @@
         "end_code": "End date",
         "code_name": "Code",
         "amount": "Amount",
-        "rol": "Rol"
+        "rol": "Rol",
+        "actions": "Actions"
     },
     "explanations": {
         "hello": "Welcome",
@@ -57,7 +58,9 @@
         "codes": "Codes",
         "create_code": "Create code",
         "redeem_code": "Redeem code",
-        "create_user": "Create user"
+        "create_user": "Create user",
+        "edit": "Edit",
+        "delete": "Delete"
     },
     "requestErrors": {
         "invalid_credentials": "Invalid Credentials",

@@ -38,6 +38,7 @@ export default class CodesManagePage extends CustomBasicPageLogged{
                                 <th>{obtainTextTranslated["labels"]["start_code"]}</th>
                                 <th>{obtainTextTranslated["labels"]["end_code"]}</th>
                                 <th>{obtainTextTranslated["labels"]["amount"]}</th>
+                                <th>{obtainTextTranslated["labels"]["actions"]}</th>
                             </thead>
                             <tbody>
                                 {this.state.codes && this.state.codes.length>0 && this.state.codes.map(code => {
@@ -48,6 +49,10 @@ export default class CodesManagePage extends CustomBasicPageLogged{
                                             <td>{code.starts}</td>
                                             <td>{code.ends}</td>
                                             <td>{code.amount}</td>
+                                            <td>
+                                                <button className="button is-info">{obtainTextTranslated["buttons"]["edit"]}</button>
+                                                <button className="button is-danger">{obtainTextTranslated["buttons"]["delete"]}</button>
+                                            </td>
                                         </tr>
                                     );
                                 })}
