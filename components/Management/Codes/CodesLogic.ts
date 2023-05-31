@@ -1,6 +1,7 @@
 import Router from "next/router";
 import {
     createCodeRequest,
+    deleteCodeRequest,
     obtainAllCodesRequest,
     redeemCodeRequest,
 } from "./CodesRequest";
@@ -38,6 +39,21 @@ function handleCreateCode(event: any) {
             });
         }
     );
+}
+
+async function handleDeleteCode(id, thisComponent) {
+    await deleteCodeRequest(id).then(
+        (response) => {
+            if(response.status == 200) {
+                let codesActual: Array<any> = thisComponent.state.codes
+                let codesArray: Array<any> = codesActual.filter((code) => code.id != id)
+                thisComponent.setState({codes: codesArray})
+            }
+        },
+        (error) => {
+            console.log(error);
+        }
+    )
 }
 
 async function handleObtainAllCodes(thisComponent) {
@@ -102,4 +118,5 @@ export {
     handleObtainAllCodes,
     handleChangeCode,
     handleRedeemCode,
+    handleDeleteCode,
 };

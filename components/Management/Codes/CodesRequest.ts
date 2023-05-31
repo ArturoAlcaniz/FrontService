@@ -31,3 +31,13 @@ export function obtainAllCodesRequest(): AxiosPromise<any> {
         data: [],
     });
 }
+
+export function deleteCodeRequest(id): AxiosPromise<any> {
+    return axios({
+        method: "post",
+        url: "/api/users/deleteCodeToken",
+        data: {
+            id: id
+        }
+    })
+}
