@@ -18,11 +18,15 @@ export function uploadImageProduct(event: any) {
     }
 }
 
-async function handleGoProduct(ID) {
+async function handleGoSellProduct(ID) {
     Router.push(`/sell/my-product?product=${ID}`, "/sell/my-product");
 }
 
-async function handleObtainMyProduct(thisComponent) {
+async function handleGoBuyProduct(ID) {
+    Router.push(`/buy/product/${ID}`, "/buy/product");
+}
+
+async function handleObtainProduct(thisComponent) {
     await obtainMyProductRequest(thisComponent).then((response) => {
         if (response.status == 200) {
             let start = "";
@@ -197,11 +201,41 @@ function handleChangeEndsell(event: any) {
 function handleChangePrice(event: any) {
     this.setState({price: event.target.value});
 }
+
+function handleAddProduct(event: any) {
+    event.preventDefault();
+
+    if (this.state.productsToBuy.size > 0 && this.state.productsToBuy.some(product => product.id === this.state.id)) {
+        let lista: Map<string, string> = new Map<string, string>().set(
+            "addProductError",
+            "product_already_added"
+        );
+        this.setState({
+            requestOK: new Map<String, String>(),
+            requestErrors: lista
+        })
+        return;
+    }
+
+    let lista: Map<string, string> = new Map<string, string>().set(
+        "addProductOk",
+        "successfully_product_added"
+    );
+
+    this.setState({
+        requestOK: lista,
+        requestErrors: new Map<String, String>(),
+        productsToBuy: [...[{id: this.state.id, productname: this.state.productname, price: this.state.price }]]
+    })
+
+}
+
 export {
     handleCreateProduct,
     handleObtainMyProducts,
-    handleObtainMyProduct,
-    handleGoProduct,
+    handleObtainProduct,
+    handleGoBuyProduct,
+    handleGoSellProduct,
     handleModifyProduct,
     handleDeleteProduct,
     handleObtainAllProducts,
@@ -211,4 +245,5 @@ export {
     handleChangeStartSell,
     handleChangeEndsell,
     handleChangePrice,
+    handleAddProduct,
 };

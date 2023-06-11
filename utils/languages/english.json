@@ -3,7 +3,8 @@
         "iniciar_sesion": "Log in",
         "inicio": "Home",
         "notificaciones": "Notifications",
-        "perfil": "My profile"
+        "perfil": "My profile",
+        "cesta": "Shopping cart"
     },
     "labels": {
         "correo": "Email",
@@ -60,7 +61,8 @@
         "redeem_code": "Redeem code",
         "create_user": "Create user",
         "edit": "Edit",
-        "delete": "Delete"
+        "delete": "Delete",
+        "add_shoppingCart": "Add shopping cart"
     },
     "requestErrors": {
         "invalid_credentials": "Invalid Credentials",
@@ -83,7 +85,8 @@
         "invalid_code": "The code is not valid",
         "invalid_access": "You haven't permission for this action",
         "code_already_exist": "Code already exist",
-        "invalid_enddate": "End date must be after start date"
+        "invalid_enddate": "End date must be after start date",
+        "product_already_added": "Product already added to shopping cart"
     },
     "requestOK": {
         "successfully_logged_in": "User successfully logged in",
@@ -92,6 +95,7 @@
         "successfully_product_created": "Product successfully created",
         "successfully_product_modified": "Product successfully modified",
         "successfully_payment": "Payment done successfully",
-        "successfully_code_created": "Code succesfully created"
+        "successfully_code_created": "Code created successfully",
+        "successfully_product_added": "Product added to shopping cart successfully"
     }
 }

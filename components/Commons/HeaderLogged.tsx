@@ -8,6 +8,7 @@ import Router from 'next/router';
 import axios from "axios";
 import NotificationsView from "./NotificationsView";
 import ProfileNavbarView from "@components/Commons/ProfileNavbarView";
+import ShoppingCartView from "./ShoppingCartView";
 import LanguageSelect from "./LanguageSelect";
 import { getAuth, signOut } from "firebase/auth";
 import Link from "next/link";
@@ -16,6 +17,7 @@ export default class HeaderLogged extends Component<any,any> {
     translations: { english: any; spanish: any; };
     notificationViewRef: RefObject<HTMLDivElement>;
     profileNavbarViewRef: RefObject<HTMLDivElement>;
+    shoppingCartViewRef: RefObject<HTMLDivElement>;
     domain: string = process.env.DOMAIN;
     constructor(props: any) {
         super(props);
@@ -27,12 +29,15 @@ export default class HeaderLogged extends Component<any,any> {
             email: props.email || "",
             coins: props.coins || "",
             avatar: props.avatar || "",
+            notifications: [],
+            productsToBuy: [],
             languageSelected: props.initialLanguageSelected || "english",
             styleNavbarBurger: "navbar-burger",
             styleNavbarMenu: "navbar-menu",
             showNotifications: false,
             showProfileNavbar: false,
             showLanguageOptions: false,
+            showShoppingCart: false,
             redeemCodeActive: props.redeemCodeActive || false,
         }
 
@@ -118,6 +123,10 @@ export default class HeaderLogged extends Component<any,any> {
         this.setState({ showNotifications: !this.state.showNotifications })
     }
 
+    showShoppingCartView() {
+        this.setState({ showShoppingCart: !this.state.showShoppingCart })
+    }
+
     showProfileNavbarView() {
         this.setState({ showProfileNavbar: !this.state.showProfileNavbar })
     }
@@ -125,6 +134,14 @@ export default class HeaderLogged extends Component<any,any> {
     blurNotificationView(event) {
         if (!event?.relatedTarget || !this.notificationViewRef.current?.contains(event?.relatedTarget)) {
             this.setState({ showNotifications: false })
+        }else{
+            event?.currentTarget.focus()
+        }
+    }
+
+    blurShoppingCartView(event) {
+        if (!event?.relatedTarget || !this.shoppingCartViewRef.current?.contains(event?.relatedTarget)) {
+            this.setState({ showShoppingCart: false })
         }else{
             event?.currentTarget.focus()
         }
@@ -148,7 +165,7 @@ export default class HeaderLogged extends Component<any,any> {
     }
 
     render() {
-        const { showProfileNavbar, showNotifications, styleNavbarBurger, styleNavbarMenu } = this.state
+        const { showProfileNavbar, showNotifications, showShoppingCart, styleNavbarBurger, styleNavbarMenu } = this.state
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
 
@@ -189,6 +206,11 @@ export default class HeaderLogged extends Component<any,any> {
                                     <i className={`${showNotifications ? 'fas' : 'far'} fa-bell`}></i>
                                 </span>
                             </div>
+                            <div className="navbar-item">
+                                <span tabIndex={-1} onBlur={this.blurShoppingCartView.bind(this)} onClick={() => {this.showShoppingCartView()}} className="customIcon">
+                                    <i className={`${showShoppingCart ? 'fa-solid' : 'fa-regular'} fa-cart-shopping`}></i>
+                                </span>
+                            </div>
                             <div className="navbar-brand">
                                 <div className={`profile ${showProfileNavbar ? 'profile-active' : ''}`} tabIndex={-1} onBlur={this.blurProfileNavbarView.bind(this)} onClick={() => {this.showProfileNavbarView()}}>
                                     <div className="profile-picture">
@@ -201,6 +223,9 @@ export default class HeaderLogged extends Component<any,any> {
                 </nav>
                 {
                     showNotifications && NotificationsView(this)
+                }
+                {
+                    showShoppingCart && ShoppingCartView(this)
                 }
                 {
                     showProfileNavbar && ProfileNavbarView(this)

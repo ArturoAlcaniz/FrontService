@@ -3,7 +3,8 @@
         "iniciar_sesion": "Iniciar sesión",
         "inicio": "Inicio",
         "notificaciones": "Notificaciones",
-        "perfil": "Mi perfil"
+        "perfil": "Mi perfil",
+        "cesta": "Cesta"
     },
     "labels": {
         "correo": "Correo",
@@ -60,7 +61,8 @@
         "redeem_code": "Canjear código",
         "create_user": "Crear usuario",
         "edit": "Edit",
-        "delete": "Delete"
+        "delete": "Delete",
+        "add_shoppingCart": "Añadir a la cesta"
     },
     "requestErrors": {
         "invalid_credentials": "Credenciales no válidas",
@@ -83,7 +85,8 @@
         "invalid_code": "El código no es válido",
         "invalid_access": "No tienes permisos para realizar esta acción",
         "code_already_exist": "Código ya existente",
-        "invalid_enddate": "Fecha final debe ser posterior a la fecha inicio"
+        "invalid_enddate": "Fecha final debe ser posterior a la fecha inicio",
+        "product_already_added": "Producto ya añadido a la cesta"
     },
     "requestOK": {
         "successfully_logged_in": "Usuario logeado correctamente",
@@ -92,6 +95,7 @@
         "successfully_product_created": "Producto creado correctamente",
         "successfully_product_modified": "Producto modificado correctamente",
         "successfully_payment": "Pago realizado correctamente",
-        "successfully_code_created": "Código creado correctamente"
+        "successfully_code_created": "Código creado correctamente",
+        "successfully_product_added": "Product añadido a la cesta correctamente"
     }
 }

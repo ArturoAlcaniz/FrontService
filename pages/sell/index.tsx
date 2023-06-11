@@ -1,5 +1,5 @@
 import React from 'react'
-import { handleGoProduct, handleObtainMyProducts } from '@root/components/Market/MarketLogic';
+import { handleGoSellProduct, handleObtainMyProducts } from '@root/components/Market/MarketLogic';
 import Image from 'next/image'
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import Link from 'next/link';
@@ -37,7 +37,7 @@ export default class MyProductsPage extends CustomBasicPageLogged{
                         {this.state.myProducts && this.state.myProducts.length>0 && this.state.myProducts.map(product => {
                             return (
                                 <li key={product.id}>
-                                    <div className="box clickable" onClick={() => handleGoProduct(product.id)}>
+                                    <div className="box clickable" onClick={() => handleGoSellProduct(product.id)}>
                                         <div className="content">
                                             <>
                                                 <Image 
