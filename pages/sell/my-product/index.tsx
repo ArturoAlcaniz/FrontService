@@ -1,6 +1,6 @@
 import React from 'react'
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
-import { handleChangeCategory, handleChangeDescription, handleChangeEndsell, handleChangePrice, handleChangeProductName, handleChangeStartSell, handleDeleteProduct, handleModifyProduct, handleObtainMyProduct, uploadImageProduct } from '@root/components/Market/MarketLogic';
+import { handleChangeCategory, handleChangeDescription, handleChangeEndsell, handleChangePrice, handleChangeProductName, handleChangeStartSell, handleDeleteProduct, handleModifyProduct, handleObtainProduct, uploadImageProduct } from '@root/components/Market/MarketLogic';
 import Link from 'next/link';
 import cookies from 'next-cookies';
 import Image from 'next/image'
@@ -40,7 +40,7 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
         }
 
         try {
-            handleObtainMyProduct(this);
+            handleObtainProduct(this);
         } catch(err) {}
     }
 
