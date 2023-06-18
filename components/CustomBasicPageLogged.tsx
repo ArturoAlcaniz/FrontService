@@ -20,7 +20,7 @@ export default class CustomBasicPageLogged extends Component<any, any>{
             initialAvatar: cookies(ctx).avatar,
             initialRol: cookies(ctx).rol,
             redeemCodeActive: false,
-            initialProductsToBuy: cookies(ctx).productsToBuy,
+            initialProductsToBuy: cookies(ctx).productsToBuy ? JSON.parse(cookies(ctx).productsToBuy) : [],
         }
     }
 
