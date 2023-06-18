@@ -2,8 +2,9 @@ export default function ShoppingCartView(thisComponent) {
     let languageSelected = thisComponent.state.languageSelected
     let obtainTextTranslated = thisComponent.translations[languageSelected]
 
-    const totalPrice: number = thisComponent.state.productsToBuy.reduce((acc: number, item: {price: number}) => {
-        return acc + item.price;
+    const totalPrice: number = thisComponent.state.productsToBuy.reduce((acc: number, item: {price: string}) => {
+        const itemPrice = parseFloat(item.price);
+        return acc + itemPrice;
     }, 0);
 
     return(
