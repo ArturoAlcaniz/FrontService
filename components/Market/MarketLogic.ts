@@ -205,7 +205,7 @@ function handleChangePrice(event: any) {
 function handleAddProduct(event: any) {
     event.preventDefault();
 
-    if (this.state.productsToBuy.size > 0 && this.state.productsToBuy.some(product => product.id === this.state.id)) {
+    if (this.state.productsToBuy.length > 0 && this.state.productsToBuy.some(product => product.id === this.state.id)) {
         let lista: Map<string, string> = new Map<string, string>().set(
             "addProductError",
             "product_already_added"
