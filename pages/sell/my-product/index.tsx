@@ -13,7 +13,6 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
     static async getInitialProps(ctx: any) {
         return {
             ...this.getInitialProps,
-            coins: cookies(ctx).coins,
             idProduct: ctx.query.product,
         }
     }
