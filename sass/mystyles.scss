@@ -611,15 +611,15 @@ a.navbar-custom {
 .shopping-cart {
     margin: 20px 0;
     float: right;
-    background: white;
     width: 320px;
-    position: relative;
+    position: absolute;
     border-radius: 3px;
     padding: 20px;
+    right: 20px;
+    bottom: 10px;
 
 
     .shopping-cart-header {
-        border-bottom: 1px solid #E8E8E8;
         padding-bottom: 15px;
 
         .shopping-cart-total {

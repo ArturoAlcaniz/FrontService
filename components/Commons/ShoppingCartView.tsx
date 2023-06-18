@@ -13,8 +13,8 @@ export default function ShoppingCartView(thisComponent) {
                 <div className="shopping-cart" style={{display: 'block'}}>
                     <div className="shopping-cart-header">
                         <div className="shopping-cart-total">
-                            <span className="lighter-text">Total:</span>
-                            <span className="main-color-text">{totalPrice}</span>
+                            <span className="lighter-text">Total: </span>
+                            <span className="main-color-text">{Number(totalPrice)}</span>
                         </div>
                     </div>
                 </div>
