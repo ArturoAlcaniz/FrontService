@@ -209,9 +209,8 @@ export default class HeaderLogged extends Component<any,any> {
                             <div className="navbar-item">
                                 <span tabIndex={-1} onBlur={this.blurShoppingCartView.bind(this)} onClick={() => {this.showShoppingCartView()}} className="customIcon">
                                     <i className="fa fa-shopping-cart"></i>
-                                    {obtainTextTranslated["labels"]["cart"]}
-                                    <span className="badge">{productsToBuy.length}</span>
                                 </span>
+                                <span className="badge">{productsToBuy.length}</span>
                             </div>
                             <div className="navbar-brand">
                                 <div className={`profile ${showProfileNavbar ? 'profile-active' : ''}`} tabIndex={-1} onBlur={this.blurProfileNavbarView.bind(this)} onClick={() => {this.showProfileNavbarView()}}>
