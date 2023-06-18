@@ -230,7 +230,7 @@ function handleAddProduct(event: any) {
     this.headerViewRef.current.setState({
         productsToBuy: newProductsToBuy,
     }))
-    document.cookie = `productsToBuy=${newProductsToBuy};`;
+    document.cookie = `productsToBuy=${JSON.stringify(newProductsToBuy)};`;
 
 }
 
