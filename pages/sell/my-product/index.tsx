@@ -11,8 +11,9 @@ import { Category } from '@entities-lib/src/entities/categoryProduct.enum';
 export default class ModifyProductPage extends CustomBasicPageLogged{
 
     static async getInitialProps(ctx: any) {
+        const baseProps = await super.getInitialProps(ctx);
         return {
-            ...this.getInitialProps,
+            ...baseProps,
             idProduct: ctx.query.product,
         }
     }

@@ -12,8 +12,9 @@ import CustomOkMessage from '../../../utils/CustomOkMessage';
 export default class BuyProductPage extends CustomBasicPageLogged{
 
     static async getInitialProps(ctx: any) {
+        const baseProps = await super.getInitialProps(ctx);
         return {
-            ...this.getInitialProps,
+            ...baseProps,
             idProduct: ctx.query.product,
         }
     }
