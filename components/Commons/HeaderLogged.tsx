@@ -30,7 +30,7 @@ export default class HeaderLogged extends Component<any,any> {
             coins: props.coins || "",
             avatar: props.avatar || "",
             notifications: [],
-            productsToBuy: props.coins || [],
+            productsToBuy: props.productsToBuy || [],
             languageSelected: props.initialLanguageSelected || "english",
             styleNavbarBurger: "navbar-burger",
             styleNavbarMenu: "navbar-menu",
