@@ -221,7 +221,10 @@ function handleAddProduct(event: any) {
         "addProductOk",
         "successfully_product_added"
     );
-    let newProductsToBuy = [...[{id: this.state.id, productname: this.state.productname, price: this.state.price }]]
+    let newProductsToBuy: {id: number, productname: string, price: number}[] = [
+        ...this.state.productsToBuy,
+        { id: this.state.id, productname: this.state.productname, price: this.state.price }
+    ];    
     this.setState({
         requestOK: lista,
         requestErrors: new Map<String, String>(),
@@ -230,7 +233,8 @@ function handleAddProduct(event: any) {
     this.headerViewRef.current.setState({
         productsToBuy: newProductsToBuy,
     }))
-    document.cookie = `productsToBuy=${JSON.stringify(newProductsToBuy)};`;
+    const productsToBuyString: string = JSON.stringify(newProductsToBuy);
+    document.cookie = `productsToBuy=${productsToBuyString};`;
 
 }
 

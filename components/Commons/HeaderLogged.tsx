@@ -85,7 +85,7 @@ export default class HeaderLogged extends Component<any,any> {
                     localStorage.clear()
                     document.cookie = `username="";`;
                     document.cookie = `email="";`;
-                    document.cookie = `productsToBuy=${JSON.stringify([])};`;
+                    document.cookie = `productsToBuy="";`;
                     Router.push(this.obtainFullUrl(''))
                 }
             }, () => {
