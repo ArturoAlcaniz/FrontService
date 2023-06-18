@@ -20,6 +20,7 @@ export default class CustomBasicPageLogged extends Component<any, any>{
             initialAvatar: cookies(ctx).avatar,
             initialRol: cookies(ctx).rol,
             redeemCodeActive: false,
+            initialProductsToBuy: cookies(ctx).productsToBuy,
         }
     }
 
@@ -38,7 +39,8 @@ export default class CustomBasicPageLogged extends Component<any, any>{
             coins: props.initialCoins || "",
             username: props.initialUsername || "",
             avatar: props.initialAvatar || "",
-            rol: props.initialRol || ""
+            rol: props.initialRol || "",
+            productsToBuy: props.initialProductsToBuy || []
         }
 
         this.translations =
@@ -74,7 +76,7 @@ export default class CustomBasicPageLogged extends Component<any, any>{
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
 
-        const { redeemCodeActive, codeRedeem, coins, avatar, username } = this.state
+        const { redeemCodeActive, codeRedeem, coins, avatar, username, productsToBuy } = this.state
 
         return (
             <div>
@@ -91,7 +93,8 @@ export default class CustomBasicPageLogged extends Component<any, any>{
                         setLanguageSelected={this.setLanguageSelected} 
                         setRedeemCodeActive={this.setRedeemCodeActive}
                         initialLanguageSelected={languageSelected} 
-                        redeemCodeActive={this.props.redeemCodeActive}/>
+                        redeemCodeActive={this.props.redeemCodeActive}
+                        productsToBuy={productsToBuy}/>
                 <div id="redeem-code-modal" className={`modal-code ${redeemCodeActive ? '' : 'hidden'}`}>
                     <div className="modal-background"></div>
 

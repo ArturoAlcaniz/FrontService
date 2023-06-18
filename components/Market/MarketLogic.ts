@@ -226,7 +226,10 @@ function handleAddProduct(event: any) {
         requestOK: lista,
         requestErrors: new Map<String, String>(),
         productsToBuy: [...[{id: this.state.id, productname: this.state.productname, price: this.state.price }]]
-    })
+    },
+    this.headerViewRef.current.setState({
+        productsToBuy: [...[{id: this.state.id, productname: this.state.productname, price: this.state.price }]],
+    }))
 
 }
 
