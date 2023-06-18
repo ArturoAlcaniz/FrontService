@@ -25,7 +25,7 @@ export default function ProfileNavbarView(thisComponent) {
                     </a>
                 </div>
                 <div className="user-logout">
-                    <a data-target="redeem-code-modal">
+                    <a onClick={() => {thisComponent.handleLogout()}}>
                         {obtainTextTranslated["buttons"]["logout"]}
                     </a>
                 </div>
