@@ -43,7 +43,7 @@ function handleLoginToBack(thisComponent, idToken: string) {
                 document.cookie = `avatar=${response.data.avatar};`;
                 document.cookie = `rol=${response.data.rol};`;
                 document.cookie = `admin=${response.data.rol === "ADMIN"}`;
-                document.cookie = `productsToBuy=${[]};`;
+                document.cookie = `productsToBuy="";`;
                 setTimeout(() => {
                     Router.push("buy");
                 }, 1000);
