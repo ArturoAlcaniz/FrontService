@@ -23,7 +23,7 @@ async function handleGoSellProduct(ID) {
 }
 
 async function handleGoBuyProduct(ID) {
-    Router.push(`/buy/product/${ID}`, "/buy/product");
+    Router.push(`/buy/product?product=${ID}`, "/buy/product");
 }
 
 async function handleObtainProduct(thisComponent) {
