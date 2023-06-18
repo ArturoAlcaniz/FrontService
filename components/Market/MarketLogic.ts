@@ -221,15 +221,16 @@ function handleAddProduct(event: any) {
         "addProductOk",
         "successfully_product_added"
     );
-
+    let newProductsToBuy = [...[{id: this.state.id, productname: this.state.productname, price: this.state.price }]]
     this.setState({
         requestOK: lista,
         requestErrors: new Map<String, String>(),
-        productsToBuy: [...[{id: this.state.id, productname: this.state.productname, price: this.state.price }]]
+        productsToBuy: newProductsToBuy
     },
     this.headerViewRef.current.setState({
-        productsToBuy: [...[{id: this.state.id, productname: this.state.productname, price: this.state.price }]],
+        productsToBuy: newProductsToBuy,
     }))
+    document.cookie = `productsToBuy=${newProductsToBuy};`;
 
 }
 
