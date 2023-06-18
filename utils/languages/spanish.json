@@ -29,7 +29,8 @@
         "code_name": "Código",
         "amount": "Cantidad",
         "rol": "Rol",
-        "actions": "Acciones"
+        "actions": "Acciones",
+        "cart": "Cesta"
     },
     "explanations": {
         "hello": "Bienvenido",

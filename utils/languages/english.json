@@ -29,7 +29,8 @@
         "code_name": "Code",
         "amount": "Amount",
         "rol": "Rol",
-        "actions": "Actions"
+        "actions": "Actions",
+        "cart": "Cart"
     },
     "explanations": {
         "hello": "Welcome",

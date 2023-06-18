@@ -9,12 +9,13 @@ $white: #fff;
 $google-blue: #4285f4;
 $button-active-blue: #1669F2;
 
-html, body{
+html,
+body {
     height: 100%;
     overflow: auto;
 }
 
-.pageCentered{
+.pageCentered {
     position: relative;
     display: flex;
     justify-content: center;
@@ -22,7 +23,7 @@ html, body{
     height: 680px;
 }
 
-.createProducts{
+.createProducts {
     margin-top: 20px;
     position: relative;
     display: flex;
@@ -31,15 +32,15 @@ html, body{
     margin-bottom: 10px;
 }
 
-.loginForm{
+.loginForm {
     width: 400px;
 }
 
-.registerForm{
+.registerForm {
     width: 400px;
 }
 
-.createProductForm{
+.createProductForm {
     width: 660px;
 }
 
@@ -216,7 +217,7 @@ a.navbar-custom {
     margin-left: 25%;
 }
 
-.customSelectaLanguageText  {
+.customSelectaLanguageText {
     display: inline-block;
     margin-left: 10px;
 }
@@ -243,6 +244,21 @@ a.navbar-custom {
     margin-left: 10px;
     align-content: center;
     display: grid;
+}
+
+.shoppingCartTitleContainer {
+    background: #cecece;
+    height: 40px;
+}
+
+.shoppingCartTitle {
+    display: flex;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: large;
+    font-family: sans-serif;
+    align-items: center;
+    height: 100%;
 }
 
 .notificationTitleContainer {
@@ -282,7 +298,7 @@ a.navbar-custom {
     background-color: #e4e3e3;
 }
 
-.buttonLogin{
+.buttonLogin {
     cursor: pointer;
     width: 100%;
     height: 100%;
@@ -290,7 +306,7 @@ a.navbar-custom {
     align-content: center;
 }
 
-.loginText{
+.loginText {
     margin-right: 5px;
     margin-left: 5px;
 }
@@ -302,7 +318,8 @@ a.navbar-custom {
     height: 42px;
     background-color: $google-blue;
     border-radius: 2px;
-    box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+
     .google-icon-wrapper {
         position: absolute;
         margin-top: 1px;
@@ -312,6 +329,7 @@ a.navbar-custom {
         border-radius: 2px;
         background-color: $white;
     }
+
     .google-icon {
         position: absolute;
         margin-top: 11px;
@@ -319,6 +337,7 @@ a.navbar-custom {
         width: 18px;
         height: 18px;
     }
+
     .btn-text {
         float: right;
         margin: 11px 11px 0 0;
@@ -327,9 +346,11 @@ a.navbar-custom {
         letter-spacing: 0.2px;
         font-family: "Roboto", sans-serif;
     }
+
     &:hover {
         box-shadow: 0 0 6px $google-blue;
     }
+
     &:active {
         background: $button-active-blue;
     }
@@ -338,13 +359,13 @@ a.navbar-custom {
 .buttonRegister {
     display: block;
 }
-  
-  @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
-  .navbar-start {
-      margin-top: 5px;
-      margin-bottom: 5px;
-  }
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+.navbar-start {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 .hidden {
     display: none;
@@ -390,7 +411,8 @@ a.navbar-custom {
     width: fit-content;
 }
 
-.productCoin, .productPrice {
+.productCoin,
+.productPrice {
     display: inline-block;
 }
 
@@ -433,36 +455,36 @@ a.navbar-custom {
     overscroll-behavior-inline: contain;
     margin-top: 10px;
 }
-  
+
 .media-scroller--with-groups {
     grid-auto-columns: 80%;
 }
-  
+
 .media-group {
     display: grid;
     gap: var(--_spacer);
     grid-auto-flow: column;
 }
-  
+
 .media-element {
     grid-template-rows: min-content;
     gap: var(--_spacer);
     border-radius: var(--radius-2);
     box-shadow: var(--shadow-2);
 }
-  
-.media-element > img {
+
+.media-element>img {
     inline-size: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
 }
-  
+
 .snaps-inline {
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: var(--_spacer, 1rem);
 }
-  
-.snaps-inline > * {
+
+.snaps-inline>* {
     scroll-snap-align: start;
 }
 
@@ -478,7 +500,7 @@ a.navbar-custom {
     box-sizing: border-box;
     position: relative;
     display: block;
-    transform: scale(var(--ggs,1));
+    transform: scale(var(--ggs, 1));
     width: 10px;
     height: 12px;
     border: 2px solid transparent;
@@ -493,6 +515,7 @@ a.navbar-custom {
     margin-top: 4%;
     cursor: pointer;
 }
+
 .gg-trash::after,
 .gg-trash::before {
     content: "";
@@ -500,6 +523,7 @@ a.navbar-custom {
     box-sizing: border-box;
     position: absolute
 }
+
 .gg-trash::after {
     background: currentColor;
     border-radius: 3px;
@@ -508,6 +532,7 @@ a.navbar-custom {
     top: -4px;
     left: -5px
 }
+
 .gg-trash::before {
     width: 10px;
     height: 4px;
@@ -518,33 +543,129 @@ a.navbar-custom {
     top: -7px;
     left: -2px
 }
+
 .buyCoinsForm {
     width: 700px;
     position: absolute;
     left: 20%;
     top: 10%;
 }
-.modal-code{
+
+.modal-code {
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: 1;
 }
-.modal-background{
+
+.modal-background {
     background-color: rgb(0 0 0 / 65%);
 }
-.box-redeem-code{
+
+.box-redeem-code {
     width: 300px;
     top: 30%;
 }
+
 .box-redeem-code input {
     margin-top: 10%;
     width: 260px;
 }
+
 .tittle-redeem-code {
     font-family: 'Roboto', sans-serif;
 }
+
 .box-redeem-code button {
     margin-top: 15px;
     width: 260px;
+}
+
+.shopping-cart-item:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.cart-icon {
+    color: #515783;
+    font-size: 24px;
+    margin-right: 7px;
+    float: left;
+}
+
+.shopping-cart:after {
+    bottom: 100%;
+    left: 89%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: white;
+    border-width: 8px;
+    margin-left: -8px;
+}
+
+.shopping-cart {
+    margin: 20px 0;
+    float: right;
+    background: white;
+    width: 320px;
+    position: relative;
+    border-radius: 3px;
+    padding: 20px;
+
+
+    .shopping-cart-header {
+        border-bottom: 1px solid #E8E8E8;
+        padding-bottom: 15px;
+
+        .shopping-cart-total {
+            float: right;
+        }
+    }
+
+    .shopping-cart-items {
+
+        padding-top: 20px;
+
+        li {
+            margin-bottom: 18px;
+        }
+
+        img {
+            float: left;
+            margin-right: 12px;
+        }
+
+        .item-name {
+            display: block;
+            padding-top: 10px;
+            font-size: 16px;
+        }
+
+        .item-price {
+            color: $main-color;
+            margin-right: 8px;
+        }
+
+        .item-quantity {
+            color: $light-text;
+        }
+    }
+
+}
+.badge {
+    background-color: #6394F8;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
 }

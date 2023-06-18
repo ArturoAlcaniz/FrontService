@@ -165,7 +165,7 @@ export default class HeaderLogged extends Component<any,any> {
     }
 
     render() {
-        const { showProfileNavbar, showNotifications, showShoppingCart, styleNavbarBurger, styleNavbarMenu } = this.state
+        const { showProfileNavbar, showNotifications, showShoppingCart, styleNavbarBurger, styleNavbarMenu, productsToBuy } = this.state
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
 
@@ -208,7 +208,9 @@ export default class HeaderLogged extends Component<any,any> {
                             </div>
                             <div className="navbar-item">
                                 <span tabIndex={-1} onBlur={this.blurShoppingCartView.bind(this)} onClick={() => {this.showShoppingCartView()}} className="customIcon">
-                                    <i className={`${showShoppingCart ? 'fa-solid' : 'fa-regular'} fa-cart-shopping`}></i>
+                                    <i className="fa fa-shopping-cart"></i>
+                                    {obtainTextTranslated["labels"]["cart"]}
+                                    <span className="badge">{productsToBuy.length}</span>
                                 </span>
                             </div>
                             <div className="navbar-brand">
