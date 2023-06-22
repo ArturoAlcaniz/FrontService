@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function ShoppingCartView(thisComponent) {
     let languageSelected = thisComponent.state.languageSelected
     let obtainTextTranslated = thisComponent.translations[languageSelected]
@@ -32,8 +34,8 @@ export default function ShoppingCartView(thisComponent) {
             <ul className="shopping-cart-items">
                 {thisComponent.state.productsToBuy && thisComponent.state.productsToBuy.length>0 && thisComponent.state.productsToBuy.map(product => {
                     return (
-                        <li key={product.id} className="cleafix">
-                            <img src={`/api/products/image/${product.image}`}></img>
+                        <li key={product.id} className="clearfix">
+                            <Image width={70} height={70} src={`/api/products/image/${product.image}`} alt='product image'/>
                             <span className="item-name">{product.productname}</span>
                             <span className="item-price">{product.price}</span>
                             <i onClick={() => {deleteProductToBuy(product)}} className="gg-trash"></i>
