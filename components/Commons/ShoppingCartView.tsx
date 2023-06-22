@@ -19,7 +19,7 @@ export default function ShoppingCartView(thisComponent) {
     }
 
     return(
-        <div tabIndex={0} ref={thisComponent.notificationViewRef} id="shoppingCartView" className="box customBox">
+        <div tabIndex={0} ref={thisComponent.notificationViewRef} id="shoppingCartView" className="box customBox shopping-cart">
             <div className="shoppingCartTitleContainer">
                 <div className="shoppingCartTitle">{obtainTextTranslated["titles"]["cesta"]}</div>
                 <div className="shopping-cart" style={{display: 'block'}}>
