@@ -35,7 +35,7 @@ export default function ShoppingCartView(thisComponent) {
                 {thisComponent.state.productsToBuy && thisComponent.state.productsToBuy.length>0 && thisComponent.state.productsToBuy.map(product => {
                     return (
                         <li key={product.id} className="clearfix">
-                            <Image width={70} height={70} src={product.image ? `/api/products/image/${product.images[0].name}` : `/api/products/image`} alt="Product Image"/>
+                            <Image width={70} height={70} src={product.image ? `/api/products/image/${product.image}` : `/api/products/image`} alt="Product Image"/>
                             <span className="item-name">{product.productname}</span>
                             <span className="item-price">{product.price}</span>
                             <i onClick={() => {deleteProductToBuy(product)}} className="item-trash gg-trash"></i>
