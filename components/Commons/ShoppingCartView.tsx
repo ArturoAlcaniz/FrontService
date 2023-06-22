@@ -8,7 +8,7 @@ export default function ShoppingCartView(thisComponent) {
     }, 0);
 
     const deleteProductToBuy = (product: any) => {
-        let newProductsToBuy =  this.state.productsToBuy.filter(p => p.id !== product.id)
+        let newProductsToBuy =  thisComponent.state.productsToBuy.filter(p => p.id !== product.id)
         thisComponent.setState({
             productsToBuy: newProductsToBuy
         })
@@ -30,7 +30,7 @@ export default function ShoppingCartView(thisComponent) {
                 </div>
             </div>
             <ul className="shopping-cart-items">
-                {this.state.products && this.state.products.length>0 && this.state.products.map(product => {
+                {thisComponent.state.products && thisComponent.state.products.length>0 && thisComponent.state.products.map(product => {
                     return (
                         <li key={product.id} className="cleafix">
                             <img src={`/api/products/image/${product.image}`}></img>
