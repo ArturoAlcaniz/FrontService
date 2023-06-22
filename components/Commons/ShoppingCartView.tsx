@@ -7,6 +7,15 @@ export default function ShoppingCartView(thisComponent) {
         return acc + itemPrice;
     }, 0);
 
+    const deleteProductToBuy = (product: any) => {
+        let newProductsToBuy =  this.state.productsToBuy.filter(p => p.id !== product.id)
+        thisComponent.setState({
+            productsToBuy: newProductsToBuy
+        })
+        const productsToBuyString: string = JSON.stringify(newProductsToBuy);
+        document.cookie = `productsToBuy=${productsToBuyString};`;
+    }
+
     return(
         <div tabIndex={0} ref={thisComponent.notificationViewRef} id="shoppingCartView" className="box customBox">
             <div className="shoppingCartTitleContainer">
@@ -20,6 +29,18 @@ export default function ShoppingCartView(thisComponent) {
                     </div>
                 </div>
             </div>
+            <ul className="shopping-cart-items">
+                {this.state.products && this.state.products.length>0 && this.state.products.map(product => {
+                    return (
+                        <li className="cleafix">
+                            <img src={`/api/products/image/${product.image}`}></img>
+                            <span className="item-name">{product.productname}</span>
+                            <span className="item-price">{product.price}</span>
+                            <i onClick={() => {deleteProductToBuy(product)}} className="gg-trash"></i>
+                        </li>
+                    )
+                })}
+            </ul>
         </div>
     )
 }

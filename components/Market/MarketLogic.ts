@@ -58,6 +58,7 @@ async function handleObtainProduct(thisComponent) {
                 startsell: start,
                 endsell: end,
                 price: response.data.price,
+                images: response.data.images
             });
         }
     });
@@ -223,7 +224,7 @@ function handleAddProduct(event: any) {
     );
     let newProductsToBuy: {id: number, productname: string, price: number}[] = [
         ...this.state.productsToBuy,
-        { id: this.state.id, productname: this.state.productname, price: this.state.price }
+        { id: this.state.id, productname: this.state.productname, price: this.state.price, image: this.state.images[0].name }
     ];    
     this.setState({
         requestOK: lista,
