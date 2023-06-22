@@ -32,7 +32,7 @@ export default function ShoppingCartView(thisComponent) {
             <ul className="shopping-cart-items">
                 {this.state.products && this.state.products.length>0 && this.state.products.map(product => {
                     return (
-                        <li className="cleafix">
+                        <li key={product.id} className="cleafix">
                             <img src={`/api/products/image/${product.image}`}></img>
                             <span className="item-name">{product.productname}</span>
                             <span className="item-price">{product.price}</span>
