@@ -50,6 +50,7 @@ export default class CustomBasicPageLogged extends Component<any, any>{
 
         this.setLanguageSelected = this.setLanguageSelected.bind(this)
         this.setRedeemCodeActive = this.setRedeemCodeActive.bind(this)
+        this.setProductsToBuy = this.setProductsToBuy.bind(this)
         this.modalCodeViewRef = createRef();
         this.headerViewRef = createRef();
     }
@@ -63,6 +64,10 @@ export default class CustomBasicPageLogged extends Component<any, any>{
         this.setState({ redeemCodeActive: true }, () => {
             this.modalCodeViewRef.current.focus();
         });
+    }
+
+    setProductsToBuy(newProductsToBuy: []) {
+        this.setState({productsToBuy: newProductsToBuy})
     }
 
     blurModalCodeView(event) {
@@ -94,7 +99,8 @@ export default class CustomBasicPageLogged extends Component<any, any>{
                         setRedeemCodeActive={this.setRedeemCodeActive}
                         initialLanguageSelected={languageSelected} 
                         redeemCodeActive={this.props.redeemCodeActive}
-                        productsToBuy={productsToBuy}/>
+                        productsToBuy={productsToBuy}
+                        setProductsToBuy={this.setProductsToBuy}/>
                 <div id="redeem-code-modal" className={`modal-code ${redeemCodeActive ? '' : 'hidden'}`}>
                     <div className="modal-background"></div>
 

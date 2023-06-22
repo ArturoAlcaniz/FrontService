@@ -14,6 +14,7 @@ export default function ShoppingCartView(thisComponent) {
         thisComponent.setState({
             productsToBuy: newProductsToBuy
         })
+        thisComponent.props.setProductsToBuy(newProductsToBuy)
         const productsToBuyString: string = JSON.stringify(newProductsToBuy);
         document.cookie = `productsToBuy=${productsToBuyString};`;
     }
