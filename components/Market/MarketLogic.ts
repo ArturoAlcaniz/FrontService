@@ -224,7 +224,7 @@ function handleAddProduct(event: any) {
     );
     let newProductsToBuy: {id: number, productname: string, price: number}[] = [
         ...this.state.productsToBuy,
-        { id: this.state.id, productname: this.state.productname, price: this.state.price, image: this.state.images[0].name }
+        { id: this.state.id, productname: this.state.productname, price: this.state.price, image: this.state.images.length > 0 ? this.state.images[0].name : undefined }
     ];    
     this.setState({
         requestOK: lista,
