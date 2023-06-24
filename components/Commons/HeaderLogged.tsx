@@ -12,6 +12,7 @@ import ShoppingCartView from "./ShoppingCartView";
 import LanguageSelect from "./LanguageSelect";
 import { getAuth, signOut } from "firebase/auth";
 import Link from "next/link";
+import { setCookie } from "@root/utils/CookieHandler";
 
 export default class HeaderLogged extends Component<any,any> {
     translations: { english: any; spanish: any; };
@@ -83,9 +84,9 @@ export default class HeaderLogged extends Component<any,any> {
             }).then((response) => {
                 if(response.status == 200){
                     localStorage.clear()
-                    document.cookie = `username="";`;
-                    document.cookie = `email="";`;
-                    document.cookie = `productsToBuy="";`;
+                    setCookie('username', '');
+                    setCookie('email', '');
+                    setCookie('productsToBuy', '');
                     Router.push(this.obtainFullUrl(''))
                 }
             }, () => {

@@ -3,6 +3,7 @@ import cookies from "next-cookies";
 import * as langEnglish from '@utils/languages/english.json';
 import * as langSpanish from '@utils/languages/spanish.json';
 import Head from 'next/head';
+import { setCookie } from '@root/utils/CookieHandler';
 
 export default class CustomBasicPage extends Component<any, any>{
 
@@ -38,7 +39,7 @@ export default class CustomBasicPage extends Component<any, any>{
 
     setLanguageSelected(languageSelected: string) {
         this.setState({ languageSelected: languageSelected })
-        document.cookie = `languageSelected=${languageSelected};`;
+        setCookie('languageSelected', languageSelected);
     }
 
     render(){

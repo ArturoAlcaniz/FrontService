@@ -1,6 +1,7 @@
 import Router from "next/router";
 import ChangeProfileRequest from "./ChangeProfileRequest";
 import changeProfileValidation from "./ChangeProfileValidation";
+import { setCookie } from "@root/utils/CookieHandler";
 
 function uploadAvatar(event: any) {
     if (event.target.files && event.target.files[0]) {
@@ -29,9 +30,9 @@ function handleChangeProfile(event: any) {
                     requestOK: lista,
                     requestErrors: new Map<string, string>(),
                 });
-                document.cookie = `username=${this.state.username};`;
-                document.cookie = `email=${this.state.email};`;
-                document.cookie = `avatar=${response.data.avatar};`;
+                setCookie('username', this.state.username);
+                setCookie('email', this.state.email);
+                setCookie('avatar', response.data.avatar);
                 setTimeout(() => {
                     Router.push("profile");
                 }, 1000);

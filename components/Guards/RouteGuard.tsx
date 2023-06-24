@@ -1,6 +1,7 @@
 import axios from "axios";
 import { NextRouter, useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
+import { setCookie } from "@root/utils/CookieHandler";
 
 function RouteGuard({ children }) {
 
@@ -24,9 +25,9 @@ function RouteGuard({ children }) {
                 data: {},
             }).then((response: any) => {
                 if(response.status == 200){
-                    document.cookie = `username=${response.data.userName};`;
-                    document.cookie = `admin=${response.data.rol === "ADMIN"}`;
-                    document.cookie = `coins=${response.data.coins};`;
+                    setCookie('username', response.data.userName);
+                    setCookie('admin', `${response.data.rol === "ADMIN"}`);
+                    setCookie('coins', response.data.coins);
                     
                     if((publicPaths().includes(path) || (isPathAdmin(path) && response.data.rol != "ADMIN")) && router) {
                         setAuthorized(false);

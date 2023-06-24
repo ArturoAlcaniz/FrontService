@@ -1,7 +1,7 @@
 export function setCookie(cookieName: string, cookieValue: string) {
 
     const expirationSeconds = 86400;
-    
+
     // Obtener todas las cookies
     const allCookies = document.cookie.split(';').reduce((cookieObj, cookie) => {
         const [name, value] = cookie.split('=');
@@ -24,5 +24,7 @@ export function setCookie(cookieName: string, cookieValue: string) {
 
     // Convertir la fecha de expiración en formato UTC
     const expirationDateString = expirationDate.toUTCString();
+
+    // Se setea la nueva cookie
     document.cookie = `${cookieName}=${cookieValue}; expires=${expirationDateString};`;
 }  

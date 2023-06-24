@@ -10,6 +10,7 @@ import {firebaseApp} from "@root/firebase-config";
 import {LoginGoogleDto} from "@entities-lib/src/requests/loginGoogle.dto";
 import {LoginDto} from "@entities-lib/src/requests/login.dto";
 import {SendCodeLoginDto} from "@entities-lib/src/requests/sendCodeLogin.dto";
+import { setCookie } from "@root/utils/CookieHandler";
 
 function handleButtonLoginGoogle() {
     const firebaseAuth = getAuth(firebaseApp);
@@ -37,13 +38,13 @@ function handleLoginToBack(thisComponent, idToken: string) {
                     requestOK: lista,
                     requestErrors: new Map<string, string>(),
                 });
-                document.cookie = `username=${response.data.userName};`;
-                document.cookie = `email=${response.data.email};`;
-                document.cookie = `coins=${response.data.coins};`;
-                document.cookie = `avatar=${response.data.avatar};`;
-                document.cookie = `rol=${response.data.rol};`;
-                document.cookie = `admin=${response.data.rol === "ADMIN"}`;
-                document.cookie = `productsToBuy="";`;
+                setCookie('username', response.data.userName);
+                setCookie('email', response.data.email);
+                setCookie('coins', response.data.coins);
+                setCookie('avatar', response.data.avatar);
+                setCookie('rol', response.data.rol);
+                setCookie('admin', `${response.data.rol === "ADMIN"}`);
+                setCookie('productsToBuy', '');
                 setTimeout(() => {
                     Router.push("buy");
                 }, 1000);
@@ -84,13 +85,13 @@ function handleLogin2(event: any) {
                     requestOK: lista,
                     requestErrors: new Map<string, string>(),
                 });
-                document.cookie = `username=${response.data.userName};`;
-                document.cookie = `email=${response.data.email};`;
-                document.cookie = `coins=${response.data.coins};`;
-                document.cookie = `avatar=${response.data.avatar};`;
-                document.cookie = `rol=${response.data.rol};`;
-                document.cookie = `admin=${response.data.rol === "ADMIN"}`;
-                document.cookie = `productsToBuy="";`;
+                setCookie('username', response.data.userName);
+                setCookie('email', response.data.email);
+                setCookie('coins', response.data.coins);
+                setCookie('avatar', response.data.avatar);
+                setCookie('rol', response.data.rol);
+                setCookie('admin', `${response.data.rol === "ADMIN"}`);
+                setCookie('productsToBuy', '');
                 setTimeout(() => {
                     Router.push("buy");
                 }, 1000);

@@ -237,8 +237,6 @@ function handleAddProduct(event: any) {
     }))
     const productsToBuyString: string = JSON.stringify(newProductsToBuy);
     setCookie('productsToBuy', productsToBuyString);
-    document.cookie = `productsToBuy=${productsToBuyString};`;
-
 }
 
 export {

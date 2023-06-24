@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { setCookie } from '@root/utils/CookieHandler';
 
 export default function ShoppingCartView(thisComponent) {
     let languageSelected = thisComponent.state.languageSelected
@@ -16,7 +17,7 @@ export default function ShoppingCartView(thisComponent) {
         })
         thisComponent.props.setProductsToBuy(newProductsToBuy)
         const productsToBuyString: string = JSON.stringify(newProductsToBuy);
-        document.cookie = `productsToBuy=${productsToBuyString};`;
+        setCookie('productsToBuy', productsToBuyString);
     }
 
     return(

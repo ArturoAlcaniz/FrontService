@@ -6,6 +6,7 @@ import Head from 'next/head';
 import HeaderLogged from './Commons/HeaderLogged';
 import { handleChangeCode } from './Management/Codes/CodesLogic';
 import { handleRedeemCode } from "@components/Management/Codes/CodesLogic"
+import { setCookie } from '@root/utils/CookieHandler';
 
 export default class CustomBasicPageLogged extends Component<any, any>{
 
@@ -57,7 +58,7 @@ export default class CustomBasicPageLogged extends Component<any, any>{
 
     setLanguageSelected(languageSelected: string) {
         this.setState({ languageSelected: languageSelected })
-        document.cookie = `languageSelected=${languageSelected};`;
+        setCookie('languageSelected', languageSelected);
     }
 
     setRedeemCodeActive() {

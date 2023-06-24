@@ -1,4 +1,5 @@
 import {buyCoinsRequest} from "./PaymentsRequest";
+import { setCookie } from "@root/utils/CookieHandler";
 
 async function handleBuyCoins(id: string, thisComponent: any): Promise<string> {
     let languageSelected = thisComponent.state.languageSelected;
@@ -9,7 +10,7 @@ async function handleBuyCoins(id: string, thisComponent: any): Promise<string> {
     await buyCoinsRequest(id).then(
         (response) => {
             if (response.status == 200) {
-                document.cookie = `coins=${response.data.coins};`;
+                setCookie('coins', response.data.coins);
                 thisComponent.headerLogged.current.changeCoins(
                     response.data.coins
                 );
