@@ -60,7 +60,7 @@ export default class HeaderLogged extends Component<any,any> {
     }
 
     checkIfIsActive(navName: string): boolean{
-        return this.state.pathname === navName
+        return this.state.pathname.startsWith(navName)
     }
 
     changeCoins(coins) {
