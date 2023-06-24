@@ -11,6 +11,7 @@ import {
     createProductValidation,
     modifyProductValidation,
 } from "./MarketValidation";
+import { setCookie } from '@utils/CookieHandler'
 
 export function uploadImageProduct(event: any) {
     if (event.target.files && event.target.files.length > 0) {
@@ -235,6 +236,7 @@ function handleAddProduct(event: any) {
         productsToBuy: newProductsToBuy,
     }))
     const productsToBuyString: string = JSON.stringify(newProductsToBuy);
+    setCookie('productsToBuy', productsToBuyString);
     document.cookie = `productsToBuy=${productsToBuyString};`;
 
 }
