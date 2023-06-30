@@ -1,4 +1,6 @@
-export default function ProfileNavbarView(thisComponent) {
+import HeaderLogged from "./HeaderLogged"
+
+export default function ProfileNavbarView(thisComponent: HeaderLogged) {
     let languageSelected = thisComponent.state.languageSelected
     let obtainTextTranslated = thisComponent.translations[languageSelected]
 

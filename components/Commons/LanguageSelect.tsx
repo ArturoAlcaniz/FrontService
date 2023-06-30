@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import ESImage from "@assets/es.png";
 import USImage from "@assets/us.png";
+import Header from './Header';
+import HeaderLogged from './HeaderLogged';
 
 function obtainLanguageImage(thisComponent): JSX.Element {
     if(thisComponent.state.languageSelected == "spanish")
@@ -17,7 +19,7 @@ function showLanguageOptions(thisComponent) {
     thisComponent.setState({showLanguageOptions: !thisComponent.state.showLanguageOptions})
 }
 
-export default function LanguageSelect(thisComponent): JSX.Element {
+export default function LanguageSelect(thisComponent: Header | HeaderLogged): JSX.Element {
     return (
         <div className="navbar-item">
             <div tabIndex={-1} onBlur={() => {blurLanguageSelect(thisComponent)}} className="customSelectLanguage" onClick={() => {showLanguageOptions(thisComponent)}}>

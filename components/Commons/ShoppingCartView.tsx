@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import { setCookie } from '@root/utils/CookieHandler';
+import HeaderLogged from './HeaderLogged';
 
-export default function ShoppingCartView(thisComponent) {
+export default function ShoppingCartView(thisComponent: HeaderLogged) {
     let languageSelected = thisComponent.state.languageSelected
     let obtainTextTranslated = thisComponent.translations[languageSelected]
 

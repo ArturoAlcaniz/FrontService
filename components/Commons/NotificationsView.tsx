@@ -1,4 +1,6 @@
-export default function NotificationsView(thisComponent) {
+import HeaderLogged from "./HeaderLogged"
+
+export default function NotificationsView(thisComponent: HeaderLogged) {
     let languageSelected = thisComponent.state.languageSelected
     let obtainTextTranslated = thisComponent.translations[languageSelected]
 
