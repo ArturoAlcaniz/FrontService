@@ -87,7 +87,10 @@
         "invalid_access": "You haven't permission for this action",
         "code_already_exist": "Code already exist",
         "invalid_enddate": "End date must be after start date",
-        "product_already_added": "Product already added to shopping cart"
+        "product_already_added": "Product already added to shopping cart",
+        "code_not_exist": "Code not exist",
+        "code_not_available": "Code not available",
+        "code_already_redeemed": "Code already redeemed"
     },
     "requestOK": {
         "successfully_logged_in": "User successfully logged in",

@@ -7,6 +7,7 @@ import HeaderLogged from './Commons/HeaderLogged';
 import { handleChangeCode } from './Management/Codes/CodesLogic';
 import { handleRedeemCode } from "@components/Management/Codes/CodesLogic"
 import { setCookie } from '@root/utils/CookieHandler';
+import CustomErrorMessage from '@root/utils/CustomErrorMessage';
 
 export default class CustomBasicPageLogged extends Component<any, any>{
 
@@ -32,6 +33,7 @@ export default class CustomBasicPageLogged extends Component<any, any>{
         super(props);
 
         this.state = {
+            formError: "",
             languageSelected: props.initialLanguageSelected || "english",
             componentName: "TI-Shop",
             requestErrors: new Map<string, string>(),
@@ -83,7 +85,8 @@ export default class CustomBasicPageLogged extends Component<any, any>{
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
 
-        const { redeemCodeActive, codeRedeem, coins, avatar, username, productsToBuy } = this.state
+        const { redeemCodeActive, codeRedeem, coins, avatar, username, productsToBuy, formError } = this.state
+        let msgError = obtainTextTranslated["requestErrors"][this.state.requestErrors.get('redeemCodeError')]
 
         return (
             <div>
@@ -109,8 +112,16 @@ export default class CustomBasicPageLogged extends Component<any, any>{
                     <div tabIndex={-1} ref={this.modalCodeViewRef} onBlur={this.blurModalCodeView.bind(this)} className="modal-content box-redeem-code">
                         <div className="box">
                             <div className="tittle-redeem-code">{obtainTextTranslated["labels"]["code_name"]}</div>
-                            <input className="input" value={codeRedeem} onChange={handleChangeCode.bind(this)}></input>
-                            <button className="button is-primary" onClick={handleRedeemCode.bind(this)}>{obtainTextTranslated["buttons"]["redeem_code"]}</button>
+                            <div className="control">
+                                <input className="input" value={codeRedeem} onChange={handleChangeCode.bind(this)}></input>
+                                { formError=='id' && CustomErrorMessage(msgError) }
+                            </div>
+                            <div className="field">
+                                <p className="help form-feedback-ok">
+                                    {obtainTextTranslated["requestOK"][this.state.requestOK.get('redeemCodeOk')]}
+                                </p>
+                                <button className="button is-primary" onClick={handleRedeemCode.bind(this)}>{obtainTextTranslated["buttons"]["redeem_code"]}</button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -87,7 +87,10 @@
         "invalid_access": "No tienes permisos para realizar esta acción",
         "code_already_exist": "Código ya existente",
         "invalid_enddate": "Fecha final debe ser posterior a la fecha inicio",
-        "product_already_added": "Producto ya añadido a la cesta"
+        "product_already_added": "Producto ya añadido a la cesta",
+        "code_not_exist": "El codigo no existe",
+        "code_not_available": "Código no disponible",
+        "code_already_redeemed": "Código ya canjeado"
     },
     "requestOK": {
         "successfully_logged_in": "Usuario logeado correctamente",
