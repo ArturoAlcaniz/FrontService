@@ -62,6 +62,9 @@ async function handleObtainProduct(thisComponent) {
                 images: response.data.images
             });
         }
+    })
+    .catch(err => {
+        alert(`Error al cargar producto: ${err}`)
     });
 }
 

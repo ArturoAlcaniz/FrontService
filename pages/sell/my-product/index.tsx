@@ -38,14 +38,7 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
             product: null,
             productCategories: Object.values(Category).map((c: string) => c),
         }
-
-        async () => {
-            try {
-                await handleObtainProduct(this);
-            } catch (err) {
-                alert("Error al cargar producto")
-            }
-        };
+        handleObtainProduct(this);
     }
 
     #deleteImageAlreadyAdded(image){
