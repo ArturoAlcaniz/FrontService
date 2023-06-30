@@ -38,9 +38,13 @@ export default class BuyProductPage extends CustomBasicPageLogged{
             productCategories: Object.values(Category).map((c: string) => c),
         }
 
-        try {
-            handleObtainProduct(this);
-        } catch(err) {}
+        async () => {
+            try {
+                await handleObtainProduct(this);
+            } catch (err) {
+                alert("Error al cargar producto")
+            }
+        };
     }
 
     render() {
