@@ -39,6 +39,7 @@ export default class CustomBasicPageLogged extends Component<any, any>{
             codeRedeem: "",
             coins: props.initialCoins || "",
             username: props.initialUsername || "",
+            email: props.email || "",
             avatar: props.initialAvatar || "",
             rol: props.initialRol || "",
             productsToBuy: props.initialProductsToBuy || []
