@@ -10,11 +10,8 @@ export default class ProfilePage extends CustomBasicPageLogged{
 
         this.state = {
             ...this.state,
-            username: this.props.username || "",
-            email: this.props.email || "",
             actualPassword: "",
             newPassword: "",
-            avatar: null,
             newConfirmPassword: "",
             showActualPassword: false,
             showNewPassword: false,
@@ -49,7 +46,7 @@ export default class ProfilePage extends CustomBasicPageLogged{
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
         let msgError = obtainTextTranslated["requestErrors"][this.state.requestErrors.get('changeProfileError')]
-        const { username, avatar, email, actualPassword, newPassword, newConfirmPassword, showActualPassword, showNewPassword, showNewConfirmPassword, formError } = this.state
+        const { username, email, actualPassword, newPassword, newConfirmPassword, showActualPassword, showNewPassword, showNewConfirmPassword, formError } = this.state
 
         return (
             <div>

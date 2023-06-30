@@ -13,9 +13,6 @@ export default class PaymentsPage extends CustomBasicPageLogged{
 
         this.state = {
             ...this.state,
-            username: this.props.username || "",
-            email: this.props.email || "",
-            avatar: null,
             componentName: "Buy coins | TI-Shop",
             formError: "",
             coinsToBuy: ""

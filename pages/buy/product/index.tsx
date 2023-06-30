@@ -2,7 +2,6 @@ import React from 'react'
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
 import { handleObtainProduct, handleAddProduct } from '@root/components/Market/MarketLogic';
 import Link from 'next/link';
-import cookies from 'next-cookies';
 import Image from 'next/image'
 import shortid from 'shortid';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';

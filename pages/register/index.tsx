@@ -12,9 +12,6 @@ export default class RegisterPage extends CustomBasicPage{
         return {
             pathname: ctx.pathname,
             initialLanguageSelected: cookies(ctx).languageSelected || 'english',
-            username: cookies(ctx).username,
-            email: cookies(ctx).email,
-            avatar: cookies(ctx).avatar,
             stepParam: ctx.query.step,
             codeParam: ctx.query.code,
         }
