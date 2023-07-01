@@ -10,7 +10,7 @@ export default class ModifyCodePage extends CustomBasicPageLogged{
         const baseProps = await super.getInitialProps(ctx);
         return {
             ...baseProps,
-            idCode: ctx.query.code,
+            code: ctx.query.code,
         }
     }
 
@@ -20,7 +20,7 @@ export default class ModifyCodePage extends CustomBasicPageLogged{
         this.state = {
             ...this.state,
             componentName: "Modify Code | TI-Shop",
-            id: props.id || "",
+            id: props.code || "",
             starts: "",
             ends: "",
             amount: 0,
