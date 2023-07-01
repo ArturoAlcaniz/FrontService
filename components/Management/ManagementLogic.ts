@@ -5,7 +5,7 @@ function handleGoCodesManage() {
 }
 
 function handleChangeCoins(event: any) {
-    this.setState({coins: event.target.value});
+    this.setState({coinsProduct: event.target.value});
 }
 
 function handleChangeId(event: any) {

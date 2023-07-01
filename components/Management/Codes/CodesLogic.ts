@@ -114,7 +114,7 @@ async function handleObtainCode(thisComponent) {
                     starts: response.data.starts,
                     ends: response.data.ends,
                     amount: response.data.amount,
-                    coins: response.data.coins,
+                    coinsProduct: response.data.coins,
                 })
             }
         },

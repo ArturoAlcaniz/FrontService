@@ -15,7 +15,7 @@ export default class CreateCodePage extends CustomBasicPageLogged{
             starts: "",
             ends: "",
             amount: 0,
-            coins: "0.0",
+            coinsProduct: "0.0",
             componentName: "Create code | TI-Shop",
         }
         
@@ -26,7 +26,7 @@ export default class CreateCodePage extends CustomBasicPageLogged{
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
 
-        const { coins, starts, ends, id, amount, formError } = this.state
+        const { coinsProduct, starts, ends, id, amount, formError } = this.state
         let msgError = obtainTextTranslated["requestErrors"][this.state.requestErrors.get('createCodeError')]
 
         return (
@@ -52,7 +52,7 @@ export default class CreateCodePage extends CustomBasicPageLogged{
                                         {obtainTextTranslated["labels"]["coins"]}
                                     </label>
                                     <div className="control">
-                                        <input className="input" value={coins} onChange={handleChangeCoins.bind(this)} type="number" autoComplete="off"></input>
+                                        <input className="input" value={coinsProduct} onChange={handleChangeCoins.bind(this)} type="number" autoComplete="off"></input>
                                     </div>
                                 </div>
 

@@ -62,13 +62,13 @@ export default class HeaderLogged extends Component<any,any> {
         return this.state.pathname.startsWith(navName)
     }
 
-    handleOpenRedeemCode() {
+    handleOpenRedeemCode() { // NOSONAR
         this.setState({redeemCodeActive: true})
         this.props.setRedeemCodeActive();
         this.forceUpdate()
-    } // NOSONAR
+    }
 
-    handleLogout(){
+    handleLogout(){ // NOSONAR
         const auth = getAuth()
         signOut(auth).then(() => {
             axios({
@@ -87,29 +87,29 @@ export default class HeaderLogged extends Component<any,any> {
                 alert("Unexpected error")
             });
         })
-    } // NOSONAR
+    }
 
-    handleAccountConfig(){
+    handleAccountConfig(){ // NOSONAR
         Router.push(this.obtainFullUrl('profile'))
-    } // NOSONAR
+    }
 
-    handleGoBuyCoins(){
+    handleGoBuyCoins(){ // NOSONAR
         Router.push(this.obtainFullUrl('payments'))
-    } // NOSONAR
+    }
 
-    obtainUserInfo(): string{
+    obtainUserInfo(): string{ // NOSONAR
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
 
         return obtainTextTranslated["explanations"]["hello"] + ", " + this.state.username
-    } // NOSONAR
+    }
 
-    obtainUserCoins(): string{
+    obtainUserCoins(): string{ // NOSONAR
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
 
         return this.state.coins + " " + obtainTextTranslated["explanations"]["coins"]
-    } // NOSONAR
+    }
 
     showNotificationView() {
         this.setState({ showNotifications: !this.state.showNotifications })
