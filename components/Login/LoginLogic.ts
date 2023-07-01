@@ -64,11 +64,6 @@ function handleLoginToBack(thisComponent, idToken: string) {
     );
 }
 
-function showPass(event: any) {
-    event.preventDefault();
-    this.setState({showPassword: !this.state.showPassword});
-}
-
 function handleLogin2(event: any) {
     event.preventDefault();
 
@@ -109,10 +104,6 @@ function handleLogin2(event: any) {
             });
         }
     );
-}
-
-function handleChangeCode(event: any) {
-    this.setState({code: event.target.value});
 }
 
 function handleLogin(event: any) {
@@ -182,7 +173,5 @@ function bannedCountdown(thisComponent) {
 export {
     handleLogin,
     handleButtonLoginGoogle,
-    showPass,
     handleLogin2,
-    handleChangeCode,
 };

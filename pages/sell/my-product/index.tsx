@@ -57,10 +57,9 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
 
     render() {
 
-        let languageSelected = this.state.languageSelected
+        const { formError, productname, category, description, price, startsell, endsell, languageSelected } = this.state
         let obtainTextTranslated = this.translations[languageSelected]
 
-        const { formError, productname, category, description, price, startsell, endsell } = this.state
         let msgError = obtainTextTranslated["requestErrors"][this.state.requestErrors.get('modifyProductError')]
         let fields = `createProducts  ${this.state.product==null ? 'hidden' : ''}`
 
@@ -71,7 +70,7 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
                 
                 <div className={fields}>
                     <form onSubmit={handleModifyProduct.bind(this)}>
-                        <div className="card createProductForm">
+                        <div className="card myProductForm">
                             <div className="card-content">
                                 <div className="field">
                                     <label className="label">
