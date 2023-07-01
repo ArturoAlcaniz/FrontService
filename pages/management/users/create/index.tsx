@@ -2,6 +2,7 @@ import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
 import { handleChangeCoins, handleCreateUser, handleChangeUsername, handleChangeEmail, handleChangePassword, showPass, handleChangeRol, handleChangeConfirmPassword, showCPass } from '@root/components/Management/Users/UsersLogic';
+import { loadPasswordStrength } from "@root/components/Register/RegisterLogic"
 import passwordStrengthMeter from '@root/components/Commons/PasswordStrengthMeter';
 import shortid from 'shortid';
 import { Rol } from '@entities-lib/src/entities/rolUser.enum'
@@ -27,47 +28,6 @@ export default class CreateUserPage extends CustomBasicPageLogged{
             componentName: "Create user | TI-Shop",
         }
         
-    }
-
-    loadPasswordStrength(event) {
-        let points = 0
-
-        if((new RegExp("^(?=.*[a-z])").test(event.target.value))){
-            points++
-        }
-
-        if((new RegExp("^(?=.*[A-Z])").test(event.target.value))){
-            points++
-        }
-
-        if((new RegExp("^(?=.*[0-9])").test(event.target.value))){
-            points++
-        }
-
-        if((new RegExp("^(?=.*[°<>#*~!\".§$%?®©¶])").test(event.target.value))){
-            points++
-        }
-
-        if(event.target.value.length >= 8){
-            points++
-        }
-
-        let newPasswordStrengthText = ""
-
-        if(points>0 && points<3) {
-            newPasswordStrengthText = "Weak"    
-        }
-
-        if(points>=3 && points<5) {
-            newPasswordStrengthText = "Good"
-        }
-
-        if(points == 5) {
-            newPasswordStrengthText = "Strong"
-        }
-
-        if(event.target.value.length>0)
-            this.setState({passwordStrength: ""+(points*20), passwordStrengthText: newPasswordStrengthText})
     }
 
     obtainClassPasswordStrength(): string {
@@ -131,7 +91,7 @@ export default class CreateUserPage extends CustomBasicPageLogged{
                                         {obtainTextTranslated["labels"]["pass"]}
                                     </label>
                                     <div className="control has-icons-left has-icons-right">
-                                        <input onInput={(e) => {this.loadPasswordStrength(e)}} value={password} onChange={handleChangePassword.bind(this)} className={`input inputpass fas ${formError=='password' ? 'is-danger' : ''}`} type={showPassword ? "text" : "password"} autoComplete="off"></input>
+                                        <input onInput={(e) => {loadPasswordStrength(e)}} value={password} onChange={handleChangePassword.bind(this)} className={`input inputpass fas ${formError=='password' ? 'is-danger' : ''}`} type={showPassword ? "text" : "password"} autoComplete="off"></input>
                                         <span className="icon is-small is-left">
                                             <i className="fas fa-lock"></i>
                                         </span>

@@ -1,7 +1,7 @@
 import React from 'react'
 import CustomBasicPage from '@components/CustomBasicPage';
 import Header from '@components/Commons/Header';
-import {handleRegister, handleSendCode, showCPass, showPass, handleChangeUsername, handleChangeEmail, handleChangePassword, handleChangeConfirmPassword, handleChangeCode} from '@components/Register/RegisterLogic';
+import {loadPasswordStrength, handleRegister, handleSendCode, showCPass, showPass, handleChangeUsername, handleChangeEmail, handleChangePassword, handleChangeConfirmPassword, handleChangeCode} from '@components/Register/RegisterLogic';
 import CustomErrorMessage from '@utils/CustomErrorMessage';
 import Link from 'next/link';
 import cookies from 'next-cookies';
@@ -35,46 +35,6 @@ export default class RegisterPage extends CustomBasicPage{
             showPassword: false,
             showCPassword: false,
         }
-    }
-    loadPasswordStrength(event) {
-        let points = 0
-
-        if((new RegExp("^(?=.*[a-z])").test(event.target.value))){
-            points++
-        }
-
-        if((new RegExp("^(?=.*[A-Z])").test(event.target.value))){
-            points++
-        }
-
-        if((new RegExp("^(?=.*[0-9])").test(event.target.value))){
-            points++
-        }
-
-        if((new RegExp("^(?=.*[°<>#*~!\".§$%?®©¶])").test(event.target.value))){
-            points++
-        }
-
-        if(event.target.value.length >= 8){
-            points++
-        }
-
-        let newPasswordStrengthText = ""
-
-        if(points>0 && points<3) {
-            newPasswordStrengthText = "Weak"    
-        }
-
-        if(points>=3 && points<5) {
-            newPasswordStrengthText = "Good"
-        }
-
-        if(points == 5) {
-            newPasswordStrengthText = "Strong"
-        }
-
-        if(event.target.value.length>0)
-            this.setState({passwordStrength: ""+(points*20), passwordStrengthText: newPasswordStrengthText})
     }
 
     obtainClassPasswordStrength(): string {
@@ -150,7 +110,7 @@ export default class RegisterPage extends CustomBasicPage{
                                         {obtainTextTranslated["labels"]["pass"]}
                                     </label>
                                     <div className="control has-icons-left has-icons-right">
-                                        <input onInput={(e) => {this.loadPasswordStrength(e)}} value={password} onChange={handleChangePassword.bind(this)} className={`input inputpass fas ${formError=='password' ? 'is-danger' : ''}`} type={showPassword ? "text" : "password"} autoComplete="off"></input>
+                                        <input onInput={(e) => {loadPasswordStrength(e)}} value={password} onChange={handleChangePassword.bind(this)} className={`input inputpass fas ${formError=='password' ? 'is-danger' : ''}`} type={showPassword ? "text" : "password"} autoComplete="off"></input>
                                         <span className="icon is-small is-left">
                                             <i className="fas fa-lock"></i>
                                         </span>
