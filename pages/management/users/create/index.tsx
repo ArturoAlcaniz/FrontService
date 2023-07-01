@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
-import { handleCreateUser, handleChangeUsername, handleChangeEmail, handleChangePassword, showPass, handleChangeRol, handleChangeConfirmPassword, showCPass } from '@root/components/Management/Users/UsersLogic';
+import { handleChangeCoins, handleCreateUser, handleChangeUsername, handleChangeEmail, handleChangePassword, showPass, handleChangeRol, handleChangeConfirmPassword, showCPass } from '@root/components/Management/Users/UsersLogic';
 import passwordStrengthMeter from '@root/components/Commons/PasswordStrengthMeter';
 import shortid from 'shortid';
 import { Rol } from '@entities-lib/src/entities/rolUser.enum'
@@ -20,6 +20,7 @@ export default class CreateUserPage extends CustomBasicPageLogged{
             confirmPassword: "",
             passwordStrength: "0",
             passwordStrengthText: "",
+            coinsUser: 0,
             showPassword: false,
             showCPassword: false,
             rolList: Object.values(Rol).map((r: string) => r),
@@ -88,7 +89,7 @@ export default class CreateUserPage extends CustomBasicPageLogged{
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
 
-        const { username, rol, email, password, confirmPassword, showPassword, showCPassword, formError, code, passwordStrength, passwordStrengthText } = this.state
+        const { username, coinsUser, rol, email, password, confirmPassword, showPassword, showCPassword, formError, passwordStrength, passwordStrengthText } = this.state
         let msgError = obtainTextTranslated["requestErrors"][this.state.requestErrors.get('createUserError')]
 
         return (
@@ -172,15 +173,23 @@ export default class CreateUserPage extends CustomBasicPageLogged{
                                         </select>
                                     </div>
                                 </div>
+                                <div className="field">
+                                    <label className="label">
+                                        {obtainTextTranslated["labels"]["coins"]}
+                                    </label>
+                                    <div className="control">
+                                        <input className="input" value={coinsUser} onChange={handleChangeCoins.bind(this)} type="number" autoComplete="off"></input>
+                                    </div>
+                                </div>
 
                                 <p className="help form-feedback-ok">
-                                    {obtainTextTranslated["requestOK"][this.state.requestOK.get('createCodeOk')]}
+                                    {obtainTextTranslated["requestOK"][this.state.requestOK.get('createUserOk')]}
                                 </p>
                                 <div className="field">
                                     { formError=='access' && CustomErrorMessage(msgError) }
                                     <p className="control">
                                         <button className="button">
-                                            {obtainTextTranslated["buttons"]["create_code"]}
+                                            {obtainTextTranslated["buttons"]["create_user"]}
                                         </button>
                                     </p>
                                 </div>

@@ -64,7 +64,9 @@
         "edit": "Edit",
         "delete": "Delete",
         "add_shoppingCart": "Add shopping cart",
-        "modify_code": "Modify code"
+        "modify_code": "Modify code",
+        "manage_codes": "Manage codes"
+
     },
     "requestErrors": {
         "invalid_credentials": "Invalid Credentials",

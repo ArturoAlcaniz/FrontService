@@ -176,5 +176,5 @@ export {
     handleDeleteCode,
     handleObtainCode,
     handleGoModifyCode,
-    handleModifyCode,
+    handleModifyCode
 };

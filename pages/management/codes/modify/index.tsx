@@ -3,6 +3,7 @@ import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import { handleChangeCoins, handleChangeStartCode, handleChangeEndCode, handleChangeAmount } from '@root/components/Management/ManagementLogic';
 import { handleModifyCode, handleObtainCode } from '@root/components/Management/Codes/CodesLogic';
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
+import Link from 'next/link';
 
 export default class ModifyCodePage extends CustomBasicPageLogged{
 
@@ -29,10 +30,6 @@ export default class ModifyCodePage extends CustomBasicPageLogged{
         handleObtainCode(this);
     }
 
-    handleGoManageCodes() {
-
-    }
-
     render() {
 
         let languageSelected = this.state.languageSelected
@@ -43,6 +40,11 @@ export default class ModifyCodePage extends CustomBasicPageLogged{
         return (
             <>
                 {super.render()}
+                <div className='buttonCentered'>
+                    <Link href="/management/codes" passHref>
+                        <button className="button is-primary">{obtainTextTranslated["buttons"]["manage_codes"]}</button>
+                    </Link>
+                </div>
                 <div className="pageCentered">
                     <form onSubmit={handleModifyCode.bind(this)}>
                         <div className="card createProductForm">

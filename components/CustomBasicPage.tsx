@@ -29,10 +29,10 @@ export default class CustomBasicPage extends Component<any, any>{
             requestOK: new Map<string, string>()
         }
 
-        this.translations =
+        this.translations = // NOSONAR
         { "english": langEnglish
         , "spanish": langSpanish
-        } // NOSONAR
+        }
 
         this.setLanguageSelected = this.setLanguageSelected.bind(this)
     }
