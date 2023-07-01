@@ -5,6 +5,7 @@ import {
     obtainAllCodesRequest,
     redeemCodeRequest,
     obtainCodeRequest,
+    modifyCodeRequest,
 } from "./CodesRequest";
 
 function handleGoCreateCodes() {
@@ -31,6 +32,37 @@ function handleCreateCode(event: any) {
         (error) => {
             let lista: Map<string, string> = new Map<string, string>().set(
                 "createCodeError",
+                error.response.data.message[0]
+            );
+            this.setState({
+                formError: error.response.data.formError,
+                requestOK: new Map<string, string>(),
+                requestErrors: lista,
+            });
+        }
+    );
+}
+
+function handleModifyCode(event: any) {
+    event.preventDefault();
+
+    modifyCodeRequest(this).then(
+        (response) => {
+            if (response.status == 200) {
+                let lista: Map<string, string> = new Map<string, string>().set(
+                    "modifyCodeOk",
+                    response.data.message[0]
+                );
+                this.setState({
+                    formError: "",
+                    requestOK: lista,
+                    requestErrors: new Map<string, string>(),
+                });
+            }
+        },
+        (error) => {
+            let lista: Map<string, string> = new Map<string, string>().set(
+                "modifyCodeError",
                 error.response.data.message[0]
             );
             this.setState({
@@ -144,4 +176,5 @@ export {
     handleDeleteCode,
     handleObtainCode,
     handleGoModifyCode,
+    handleModifyCode,
 };

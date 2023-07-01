@@ -63,7 +63,8 @@
         "create_user": "Crear usuario",
         "edit": "Edit",
         "delete": "Delete",
-        "add_shoppingCart": "Añadir a la cesta"
+        "add_shoppingCart": "Añadir a la cesta",
+        "modify_code": "Modificar código"
     },
     "requestErrors": {
         "invalid_credentials": "Credenciales no válidas",

@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
-import { handleChangeCoins, handleChangeId, handleChangeStartCode, handleChangeEndCode, handleChangeAmount } from '@root/components/Management/ManagementLogic';
-import { handleCreateCode, handleObtainCode } from '@root/components/Management/Codes/CodesLogic';
+import { handleChangeCoins, handleChangeStartCode, handleChangeEndCode, handleChangeAmount } from '@root/components/Management/ManagementLogic';
+import { handleModifyCode, handleObtainCode } from '@root/components/Management/Codes/CodesLogic';
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
 
 export default class ModifyCodePage extends CustomBasicPageLogged{
@@ -44,7 +44,7 @@ export default class ModifyCodePage extends CustomBasicPageLogged{
             <>
                 {super.render()}
                 <div className="pageCentered">
-                    <form onSubmit={handleCreateCode.bind(this)}>
+                    <form onSubmit={handleModifyCode.bind(this)}>
                         <div className="card createProductForm">
                             <div className="card-content">
 
@@ -53,7 +53,7 @@ export default class ModifyCodePage extends CustomBasicPageLogged{
                                         {obtainTextTranslated["labels"]["code_name"]}
                                     </label>
                                     <div className="control">
-                                        <input className="input" value={id} onChange={handleChangeId.bind(this)} type="text" autoComplete="off"></input>
+                                        <input disabled className="input" value={id} type="text" autoComplete="off"></input>
                                     </div>
                                     { formError=='id' && CustomErrorMessage(msgError) }
                                 </div>
@@ -101,7 +101,7 @@ export default class ModifyCodePage extends CustomBasicPageLogged{
                                     { formError=='access' && CustomErrorMessage(msgError) }
                                     <p className="control">
                                         <button className="button">
-                                            {obtainTextTranslated["buttons"]["create_code"]}
+                                            {obtainTextTranslated["buttons"]["modify_code"]}
                                         </button>
                                     </p>
                                 </div>

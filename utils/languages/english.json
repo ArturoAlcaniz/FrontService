@@ -63,7 +63,8 @@
         "create_user": "Create user",
         "edit": "Edit",
         "delete": "Delete",
-        "add_shoppingCart": "Add shopping cart"
+        "add_shoppingCart": "Add shopping cart",
+        "modify_code": "Modify code"
     },
     "requestErrors": {
         "invalid_credentials": "Invalid Credentials",

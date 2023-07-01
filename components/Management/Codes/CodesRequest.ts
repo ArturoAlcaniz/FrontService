@@ -49,3 +49,17 @@ export function deleteCodeRequest(id): AxiosPromise<any> {
         }
     })
 }
+
+export function modifyCodeRequest(thisComponent: any): AxiosPromise<any> {
+    return axios({
+        method: "post",
+        url: "/api/users/modifyCodeToken",
+        data: {
+            id: thisComponent.state.id,
+            coins: thisComponent.state.coins,
+            starts: thisComponent.state.starts,
+            ends: thisComponent.state.ends,
+            amount: thisComponent.state.amount,
+        },
+    });
+}
