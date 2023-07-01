@@ -3,69 +3,50 @@ import { setErrors } from "@root/components/Commons/Validator";
 export function modifyProductValidation(thisComponent: any) {
     let lista: Map<string, string> = new Map<string, string>();
     if (!thisComponent.state.id) {
-        lista.set("modifyProductError", "product_notexist");
-        thisComponent.setState({ formError: "product" });
-        setErrors(thisComponent, lista);
+        setErrors(thisComponent, "modifyProductError", "product_notexist", "product");
         return false;
     }
 
     if (!thisComponent.state.productname) {
-        lista.set("modifyProductError", "productname_empty");
-        thisComponent.setState({ formError: "name" });
-        setErrors(thisComponent, lista);
+        setErrors(thisComponent, "modifyProductError", "productname_empty", "name");
         return false;
     }
 
     if (!thisComponent.state.category) {
-        lista.set("modifyProductError", "productcategory_empty");
-        thisComponent.setState({ formError: "category" });
-        setErrors(thisComponent, lista);
+        setErrors(thisComponent, "modifyProductError", "productcategory_empty", "category");
         return false;
     }
 
     if (!thisComponent.state.description) {
-        lista.set("modifyProductError", "productdescription_empty");
-        thisComponent.setState({ formError: "description" });
-        setErrors(thisComponent, lista);
+        setErrors(thisComponent, "modifyProductError", "productdescription_empty", "description");
         return false;
     }
 
     if (!thisComponent.state.price) {
-        lista.set("modifyProductError", "productprice_empty");
-        thisComponent.setState({ formError: "price" });
-        setErrors(thisComponent, lista);
+        setErrors(thisComponent, "modifyProductError", "productprice_empty", "price");
         return false;
     }
     return true
 }
 
 export function createProductValidation(thisComponent: any) {
-    let lista: Map<string, string> = new Map<string, string>();
     if (!thisComponent.state.productname) {
-        lista.set("createProductError", "productname_empty");
-        thisComponent.setState({ formError: "name" });
-        setErrors(thisComponent, lista);
+        setErrors(thisComponent, "createProductError", "productname_empty", "name");
         return false;
     }
 
     if (!thisComponent.state.category) {
-        lista.set("createProductError", "productcategory_empty");
-        thisComponent.setState({ formError: "category" });
-        setErrors(thisComponent, lista);
+        setErrors(thisComponent, "createProductError", "productcategory_empty", "category");
         return false;
     }
 
     if (!thisComponent.state.description) {
-        lista.set("createProductError", "productdescription_empty");
-        thisComponent.setState({ formError: "description" });
-        setErrors(thisComponent, lista);
+        setErrors(thisComponent, "createProductError", "productdescription_empty", "description");
         return false;
     }
 
     if (!thisComponent.state.price) {
-        lista.set("createProductError", "productprice_empty");
-        thisComponent.setState({ formError: "price" });
-        setErrors(thisComponent, lista);
+        setErrors(thisComponent, "createProductError", "productprice_empty", "price");
         return false;
     }
     return true;
