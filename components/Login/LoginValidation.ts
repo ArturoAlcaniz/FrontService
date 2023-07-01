@@ -1,28 +1,21 @@
-export default function loginValidation(thisComponent: any) {
-    if (!thisComponent.state.email) {
-        let lista: Map<string, string> = new Map<string, string>().set(
-            "loginError",
-            "email_empty"
-        );
-        thisComponent.setState({
-            requestErrors: lista,
-            requestOk: new Map<string, string>(),
-            formError: "email",
-        });
-        return false;
-    }
+import { setErrors } from "@root/components/Commons/Validator";
 
-    if (!thisComponent.state.password) {
-        let lista: Map<string, string> = new Map<string, string>().set(
-            "loginError",
-            "pass_empty"
-        );
-        thisComponent.setState({
-            requestErrors: lista,
-            requestOk: new Map<string, string>(),
-            formError: "password",
-        });
+export default function loginValidation(thisComponent: any) {
+    let lista: Map<string, string> = new Map<string, string>();
+    
+    if (!thisComponent.state.email) {
+        lista.set("loginError", "email_empty");
+        thisComponent.setState({ formError: "email" });
+        setErrors(thisComponent, lista);
         return false;
     }
+    
+    if (!thisComponent.state.password) {
+        lista.set("loginError", "pass_empty");
+        thisComponent.setState({ formError: "password" });
+        setErrors(thisComponent, lista);
+        return false;
+    }
+      
     return true;
 }

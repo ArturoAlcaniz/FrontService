@@ -87,12 +87,12 @@ function loadPasswordStrength(event: any) {
     }
 
     // Comprueba numero
-    if(/^(?=.*[0-9])/.test(event.target.value)){
+    if (/^(?=.*\d)/.test(event.target.value)) {
         points++
     }
 
     // Comprueba caracter especial
-    if(/^(?=.*[°<>#*~!\".§$%?®©¶])/.test(event.target.value)){
+    if(/^(?=.*[°<>#*~!".§$%?®©¶])/.test(event.target.value)){
         points++
     }
 
