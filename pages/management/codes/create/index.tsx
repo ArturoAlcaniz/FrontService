@@ -3,7 +3,7 @@ import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import { handleChangeCoins, handleChangeId, handleChangeStartCode, handleChangeEndCode, handleChangeAmount } from '@root/components/Management/ManagementLogic';
 import { handleCreateCode } from '@root/components/Management/Codes/CodesLogic';
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
-import Link from 'next/link';
+import CenteredButton from '@root/components/Commons/CenteredButton';
 
 export default class CreateCodePage extends CustomBasicPageLogged{
     constructor(props: any) {
@@ -33,11 +33,8 @@ export default class CreateCodePage extends CustomBasicPageLogged{
         return (
             <>
                 {super.render()}
-                <div className='buttonCentered'>
-                    <Link href="/management/codes" passHref>
-                        <button className="button is-primary">{obtainTextTranslated["buttons"]["manage_codes"]}</button>
-                    </Link>
-                </div>
+                {CenteredButton("/management/codes", obtainTextTranslated["buttons"]["manage_codes"])}
+
                 <div className="pageCentered">
                     <form onSubmit={handleCreateCode.bind(this)}>
                         <div className="card createProductForm">

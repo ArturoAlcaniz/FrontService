@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import { handleDeleteCode, handleObtainAllCodes, handleGoModifyCode } from '@root/components/Management/Codes/CodesLogic';
-import Link from 'next/link';
+import CenteredButton from '@root/components/Commons/CenteredButton';
 
 export default class CodesManagePage extends CustomBasicPageLogged{
     constructor(props: any) {
@@ -24,11 +24,8 @@ export default class CodesManagePage extends CustomBasicPageLogged{
         return (
             <div>
                 {super.render()}
-                <div className='buttonCentered'>
-                    <Link href="/management/codes/create" passHref>
-                        <button className="button is-primary">{obtainTextTranslated["buttons"]["create_code"]}</button>
-                    </Link>
-                </div>
+                {CenteredButton("/management/codes/create", obtainTextTranslated["buttons"]["create_code"])}
+
                 <div className="pageCentered">
                     <div className="ListCodes">
                         <table className="table">

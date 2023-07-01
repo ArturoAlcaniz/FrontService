@@ -2,7 +2,6 @@ import React from 'react'
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
 import { handleCreateProduct, uploadImageProduct, handleChangeProductName, handleChangeCategory, handleChangeDescription,
     handleChangeStartSell, handleChangeEndsell, handleChangePrice } from '@root/components/Market/MarketLogic';
-import Link from 'next/link';
 import shortid from 'shortid';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import { Category } from '@entities-lib/src/entities/categoryProduct.enum'

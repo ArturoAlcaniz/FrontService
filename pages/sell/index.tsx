@@ -2,7 +2,6 @@ import React from 'react'
 import { handleGoSellProduct, handleObtainMyProducts } from '@root/components/Market/MarketLogic';
 import Image from 'next/image'
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
-import Link from 'next/link';
 import CenteredButton from '@root/components/Commons/CenteredButton';
 
 export default class MyProductsPage extends CustomBasicPageLogged{

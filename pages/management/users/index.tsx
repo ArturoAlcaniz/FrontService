@@ -1,7 +1,6 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import { handleObtainAllUsers } from '@root/components/Management/Users/UsersLogic';
-import Link from 'next/link';
 import CenteredButton from '@root/components/Commons/CenteredButton';
 
 export default class UsersManagePage extends CustomBasicPageLogged{

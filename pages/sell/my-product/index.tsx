@@ -1,7 +1,6 @@
 import React from 'react'
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
 import { handleChangeCategory, handleChangeDescription, handleChangeEndsell, handleChangePrice, handleChangeProductName, handleChangeStartSell, handleDeleteProduct, handleModifyProduct, handleObtainProduct, uploadImageProduct } from '@root/components/Market/MarketLogic';
-import Link from 'next/link';
 import Image from 'next/image'
 import shortid from 'shortid';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
