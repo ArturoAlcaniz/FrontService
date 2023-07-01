@@ -3,6 +3,7 @@ import { handleGoSellProduct, handleObtainMyProducts } from '@root/components/Ma
 import Image from 'next/image'
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import Link from 'next/link';
+import CenteredButton from '@root/components/Commons/CenteredButton';
 
 export default class MyProductsPage extends CustomBasicPageLogged{
 
@@ -27,11 +28,8 @@ export default class MyProductsPage extends CustomBasicPageLogged{
         return (
             <div>
                 {super.render()}
-                <div className='buttonCentered'>
-                    <Link href="/sell/create" passHref>
-                        <button className="button is-primary">{obtainTextTranslated["buttons"]["add_product"]}</button>
-                    </Link>
-                </div>
+                {CenteredButton("/sell/create", obtainTextTranslated["buttons"]["add_product"])}
+
                 <div className="pageCentered">
                     <ul className="ListProducts">
                         {this.state.myProducts && this.state.myProducts.length>0 && this.state.myProducts.map(product => {

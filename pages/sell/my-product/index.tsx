@@ -6,6 +6,7 @@ import Image from 'next/image'
 import shortid from 'shortid';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import { Category } from '@entities-lib/src/entities/categoryProduct.enum';
+import CenteredButton from '@root/components/Commons/CenteredButton';
 
 export default class ModifyProductPage extends CustomBasicPageLogged{
 
@@ -67,11 +68,7 @@ export default class ModifyProductPage extends CustomBasicPageLogged{
         return (
             <div>
                 {super.render()}
-                <div className='buttonCentered'>
-                    <Link href="/sell" passHref>
-                        <button className="button is-primary">{obtainTextTranslated["buttons"]["my_products"]}</button>
-                    </Link>
-                </div>
+                {CenteredButton("/sell", obtainTextTranslated["buttons"]["my_products"])}
                 
                 <div className={fields}>
                     <form onSubmit={handleModifyProduct.bind(this)}>

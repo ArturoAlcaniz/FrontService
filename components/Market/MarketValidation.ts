@@ -1,7 +1,6 @@
 import { setErrors } from "@root/components/Commons/Validator";
 
 export function modifyProductValidation(thisComponent: any) {
-    let lista: Map<string, string> = new Map<string, string>();
     if (!thisComponent.state.id) {
         setErrors(thisComponent, "modifyProductError", "product_notexist", "product");
         return false;

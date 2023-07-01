@@ -2,6 +2,7 @@ import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import { handleObtainAllUsers } from '@root/components/Management/Users/UsersLogic';
 import Link from 'next/link';
+import CenteredButton from '@root/components/Commons/CenteredButton';
 
 export default class UsersManagePage extends CustomBasicPageLogged{
     constructor(props: any) {
@@ -24,11 +25,7 @@ export default class UsersManagePage extends CustomBasicPageLogged{
         return (
             <div>
                 {super.render()}
-                <div className='buttonCentered'>
-                    <Link href="/management/users/create" passHref>
-                        <button className="button is-primary">{obtainTextTranslated["buttons"]["create_user"]}</button>
-                    </Link>
-                </div>
+                {CenteredButton("/management/users/create", obtainTextTranslated["buttons"]["create_user"])}
                 <div className="pageCentered">
                     <div className="ListCodes">
                         <table className="table">
