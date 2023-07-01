@@ -111,14 +111,6 @@ function handleLogin2(event: any) {
     );
 }
 
-function handleChangePassword(event: any) {
-    this.setState({password: event.target.value});
-}
-
-function handleChangeEmail(event: any) {
-    this.setState({email: event.target.value});
-}
-
 function handleChangeCode(event: any) {
     this.setState({code: event.target.value});
 }
@@ -192,7 +184,5 @@ export {
     handleButtonLoginGoogle,
     showPass,
     handleLogin2,
-    handleChangePassword,
-    handleChangeEmail,
     handleChangeCode,
 };

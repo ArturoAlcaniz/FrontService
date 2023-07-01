@@ -67,14 +67,6 @@ function showActualPass(event: any) {
     this.setState({showActualPassword: !this.state.showActualPassword});
 }
 
-function handleChangeUsername(event: any) {
-    this.setState({username: event.target.value});
-}
-
-function handleChangeEmail(event: any) {
-    this.setState({email: event.target.value});
-}
-
 function handleChangeNewPassword(event: any) {
     this.setState({newPassword: event.target.value});
 }
@@ -92,8 +84,6 @@ export {
     showNewPass,
     handleChangeProfile,
     uploadAvatar,
-    handleChangeUsername,
-    handleChangeEmail,
     handleChangeNewPassword,
     handleChangeNewConfirmPassword,
     handleChangeActualPassord,

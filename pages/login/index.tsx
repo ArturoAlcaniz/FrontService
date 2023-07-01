@@ -1,11 +1,12 @@
 import React from 'react'
 import CustomBasicPage from '@components/CustomBasicPage';
 import Header from '@components/Commons/Header';
-import { handleLogin, handleButtonLoginGoogle, showPass, handleLogin2, handleChangePassword, handleChangeEmail, handleChangeCode } from '@components/Login/LoginLogic';
+import { handleLogin, handleButtonLoginGoogle, showPass, handleLogin2, handleChangeCode } from '@components/Login/LoginLogic';
 import CustomErrorMessage from '@utils/CustomErrorMessage';
 import Image from 'next/image'
 import Link from 'next/link';
 import cookies from 'next-cookies';
+import { handleChangeEmail, handleChangePassword } from '@root/components/Register/RegisterLogic';
 
 export default class LoginPage extends CustomBasicPage{
     static async getInitialProps(ctx: any) {

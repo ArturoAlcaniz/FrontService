@@ -1,8 +1,8 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
-import { handleChangeCoins, handleCreateUser, handleChangeUsername, handleChangeEmail, handleChangePassword, showPass, handleChangeRol, handleChangeConfirmPassword, showCPass } from '@root/components/Management/Users/UsersLogic';
-import { loadPasswordStrength } from "@root/components/Register/RegisterLogic"
+import { handleChangeCoins, handleCreateUser, handleChangeRol } from '@root/components/Management/Users/UsersLogic';
+import { handleChangeConfirmPassword, handleChangeEmail, handleChangePassword, handleChangeUsername, loadPasswordStrength, showCPass, showPass } from "@root/components/Register/RegisterLogic"
 import passwordStrengthMeter from '@root/components/Commons/PasswordStrengthMeter';
 import shortid from 'shortid';
 import { Rol } from '@entities-lib/src/entities/rolUser.enum'

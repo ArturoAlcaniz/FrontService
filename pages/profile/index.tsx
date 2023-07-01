@@ -1,8 +1,9 @@
 import React from 'react'
 import CustomErrorMessage from '@utils/CustomErrorMessage';
-import { handleChangeProfile, showActualPass, showNewCPass, showNewPass, uploadAvatar, handleChangeUsername, handleChangeEmail, handleChangeNewPassword,
+import { handleChangeProfile, showActualPass, showNewCPass, showNewPass, uploadAvatar, handleChangeNewPassword,
     handleChangeNewConfirmPassword, handleChangeActualPassord } from '@components/Profile/ChangeProfileLogic';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
+import { handleChangeEmail, handleChangeUsername } from '@root/components/Register/RegisterLogic';
 
 export default class ProfilePage extends CustomBasicPageLogged{
     constructor(props: any) {
