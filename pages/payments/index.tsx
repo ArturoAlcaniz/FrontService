@@ -64,9 +64,8 @@ export default class PaymentsPage extends CustomBasicPageLogged{
                                                 ],
                                             });
                                         }}
-                                        onApprove={(data, actions) => {
+                                        onApprove={(_, actions) => {
                                             return actions.order.capture().then(async (details) => {
-                                                const name = details.payer.name.given_name;
                                                 const id = details.id
                                                 alert(await handleBuyCoins(id, thisComponent))
                                             });

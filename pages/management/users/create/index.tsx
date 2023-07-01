@@ -18,7 +18,7 @@ export default class CreateUserPage extends CustomBasicPageLogged{
             password: "",
             rol: "",
             confirmPassword: "",
-            passwordStrength: "0",
+            passwordStrength: "0", // NOSONAR
             passwordStrengthText: "",
             coinsUser: 0,
             showPassword: false,

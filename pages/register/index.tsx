@@ -30,7 +30,7 @@ export default class RegisterPage extends CustomBasicPage{
             confirmPassword: "",
             formError: "",
             componentName: "Register | TI-Shop",
-            passwordStrength: "0",
+            passwordStrength: "0", // NOSONAR
             passwordStrengthText: "",
             showPassword: false,
             showCPassword: false,

@@ -33,7 +33,8 @@
 
 .fab,
 .fa-brands {
-  font-family: 'Font Awesome 6 Free', sans-serif; }
+  font-family: 'Font Awesome 6 Free', sans-serif;
+  font-weight: 400; }
 
 .fa-1x {
   font-size: 1em; }
@@ -6381,10 +6382,6 @@ readers do not read off random characters that represent icons */
   font-display: block;
   src: url("webfonts/fa-brands-400.woff2") format("woff2"), url("webfonts/fa-brands-400.ttf") format("truetype"); }
 
-.fab,
-.fa-brands {
-  font-weight: 400; }
-
 .fa-monero:before {
   content: "\f3d0"; }
 
@@ -7901,9 +7898,6 @@ readers do not read off random characters that represent icons */
 .far,
 .fa-regular {
   font-weight: 400; }
-:root, :host {
-  --fa-style-family-classic: 'Font Awesome 6 Free';
-  --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Free'; }
 
 @font-face {
   font-family: 'Font Awesome 6 Free';
