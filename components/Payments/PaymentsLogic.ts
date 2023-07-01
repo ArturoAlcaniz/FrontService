@@ -5,7 +5,7 @@ async function handleBuyCoins(id: string, thisComponent: any): Promise<string> {
     let languageSelected = thisComponent.state.languageSelected;
     let obtainTextTranslated = thisComponent.translations[languageSelected];
 
-    var msgResult = "";
+    let msgResult = "";
 
     await buyCoinsRequest(id).then(
         (response) => {

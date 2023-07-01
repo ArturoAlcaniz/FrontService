@@ -45,7 +45,7 @@ export default class BuyProductPage extends CustomBasicPageLogged{
         let languageSelected = this.state.languageSelected
         let obtainTextTranslated = this.translations[languageSelected]
 
-        const { formError, productname, category, description, price, startsell, endsell } = this.state
+        const { formError, productname, category, description, price } = this.state
         let msgError = obtainTextTranslated["requestErrors"][this.state.requestErrors.get('addProductError')]
         let msgOk = obtainTextTranslated["requestOK"][this.state.requestOK.get('addProductOk')]
         let fields = `createProducts  ${this.state.product==null ? 'hidden' : ''}`

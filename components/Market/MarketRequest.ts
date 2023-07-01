@@ -54,8 +54,8 @@ function modifyProductRequest(thisComponent: any): AxiosPromise<any> {
     formData.append("imagesAlreadyAdded", JSON.stringify(imagesIds));
 
     if (thisComponent.state.images != null) {
-        for (var i = 0; i < thisComponent.state.images.length; i++) {
-            formData.append("images", thisComponent.state.images[i]);
+        for (const image of thisComponent.state.images) {
+            formData.append("images", image);
         }
         return axios.post("/api/products/modify", formData);
     }
@@ -71,9 +71,9 @@ function createProductRequest(thisComponent: any): AxiosPromise<any> {
     formData.append("endsell", thisComponent.state.endsell);
     formData.append("price", thisComponent.state.price);
 
-    if (thisComponent.state.images && thisComponent.state.images.length) {
-        for (var i = 0; i < thisComponent.state.images.length; i++) {
-            formData.append("images", thisComponent.state.images[i]);
+    if (thisComponent.state.images?.length) {
+        for (const image of thisComponent.state.images) {
+            formData.append("images", image);
         }
         return axios.post("/api/products/create", formData);
     } else {

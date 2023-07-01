@@ -4,7 +4,7 @@ import changeProfileValidation from "./ChangeProfileValidation";
 import { setCookie } from "@root/utils/CookieHandler";
 
 function uploadAvatar(event: any) {
-    if (event.target.files && event.target.files[0]) {
+    if (event.target.files?.[0]) {
         const i = event.target.files[0];
 
         this.setState({avatar: i});

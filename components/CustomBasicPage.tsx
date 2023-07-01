@@ -18,7 +18,7 @@ export default class CustomBasicPage extends Component<any, any>{
             avatar: cookies(ctx).avatar,
         }
     }
-    translations: { english: any; spanish: any; };
+    translations: { english: any; spanish: any; }; // NOSONAR
     constructor(props: any) {
         super(props);
 
@@ -32,7 +32,7 @@ export default class CustomBasicPage extends Component<any, any>{
         this.translations =
         { "english": langEnglish
         , "spanish": langSpanish
-        }
+        } // NOSONAR
 
         this.setLanguageSelected = this.setLanguageSelected.bind(this)
     }

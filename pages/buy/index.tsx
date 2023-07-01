@@ -18,8 +18,6 @@ export default class BuyPage extends CustomBasicPageLogged{
 
     render() {
 
-        let languageSelected = this.state.languageSelected
-
         return (
             <div>
                 {super.render()}

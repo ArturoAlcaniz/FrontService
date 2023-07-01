@@ -73,8 +73,8 @@ async function handleObtainMyProducts(thisComponent) {
         (response) => {
             if (response.status == 200) {
                 let productsArray: Array<any> = [];
-                for (let i = 0; i < response.data.length; i++) {
-                    productsArray.push(response.data[i]);
+                for (const product of response.data) {
+                    productsArray.push(product);
                 }
                 thisComponent.setState({myProducts: productsArray});
             }
@@ -90,8 +90,8 @@ async function handleObtainAllProducts(thisComponent) {
         (response) => {
             if (response.status == 200) {
                 let productsArray: Array<any> = [];
-                for (let i = 0; i < response.data.length; i++) {
-                    productsArray.push(response.data[i]);
+                for (const product of response.data) {
+                    productsArray.push(product);
                 }
                 thisComponent.setState({products: productsArray});
             }
@@ -216,7 +216,7 @@ function handleAddProduct(event: any) {
             "product_already_added"
         );
         this.setState({
-            requestOK: new Map<String, String>(),
+            requestOK: new Map<string, string>(),
             requestErrors: lista
         })
         return;
@@ -232,7 +232,7 @@ function handleAddProduct(event: any) {
     ];    
     this.setState({
         requestOK: lista,
-        requestErrors: new Map<String, String>(),
+        requestErrors: new Map<string, string>(),
         productsToBuy: newProductsToBuy
     },
     this.headerViewRef.current.setState({

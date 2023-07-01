@@ -4,6 +4,7 @@ import {
     deleteCodeRequest,
     obtainAllCodesRequest,
     redeemCodeRequest,
+    obtainCodeRequest,
 } from "./CodesRequest";
 
 function handleGoCreateCodes() {
@@ -61,8 +62,8 @@ async function handleObtainAllCodes(thisComponent) {
         (response) => {
             if (response.status == 200) {
                 let codesArray: Array<any> = [];
-                for (let i = 0; i < response.data.length; i++) {
-                    codesArray.push(response.data[i]);
+                for (const code of response.data) {
+                    codesArray.push(code);
                 }
                 thisComponent.setState({codes: codesArray});
             }
@@ -71,6 +72,24 @@ async function handleObtainAllCodes(thisComponent) {
             console.log(error);
         }
     );
+}
+
+async function handleObtainCode(thisComponent) {
+    await obtainCodeRequest(thisComponent).then(
+        (response) => {
+            if (response.status == 200) {
+                thisComponent.setState({
+                    starts: response.data.starts,
+                    ends: response.data.ends,
+                    amount: response.data.amount,
+                    coins: response.data.coins,
+                })
+            }
+        },
+        (error) => {
+            console.log(error);
+        }
+    )
 }
 
 function handleChangeCode(event: any) {
@@ -112,6 +131,10 @@ function handleRedeemCode(event: any) {
     );
 }
 
+async function handleGoModifyCode(ID) {
+    Router.push(`/management/codes/modify?code=${ID}`, "/management/codes/modify");
+}
+
 export {
     handleGoCreateCodes,
     handleCreateCode,
@@ -119,4 +142,6 @@ export {
     handleChangeCode,
     handleRedeemCode,
     handleDeleteCode,
+    handleObtainCode,
+    handleGoModifyCode,
 };

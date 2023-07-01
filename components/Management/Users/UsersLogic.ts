@@ -40,8 +40,8 @@ async function handleObtainAllUsers(thisComponent) {
         (response) => {
             if (response.status == 200) {
                 let usersArray: Array<any> = [];
-                for (let i = 0; i < response.data.length; i++) {
-                    usersArray.push(response.data[i]);
+                for (const user of response.data) {
+                    usersArray.push(user);
                 }
                 thisComponent.setState({users: usersArray});
             }

@@ -32,6 +32,14 @@ export function obtainAllCodesRequest(): AxiosPromise<any> {
     });
 }
 
+export function obtainCodeRequest(thisComponent: any): AxiosPromise<any> {
+    return axios({
+        method: "get",
+        url: `/api/users/obtainCode/${thisComponent.state.code}`,
+        data: [],
+    });
+}
+
 export function deleteCodeRequest(id): AxiosPromise<any> {
     return axios({
         method: "post",

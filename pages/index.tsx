@@ -31,7 +31,6 @@ export default class AllProductsPage extends CustomBasicPage{
     render() {
 
         let languageSelected = this.state.languageSelected
-        const { formError, productname, category, description, price } = this.state
 
         return (
             <div>
