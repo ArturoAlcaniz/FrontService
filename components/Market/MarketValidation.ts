@@ -6,47 +6,31 @@ export function modifyProductValidation(thisComponent: any) {
         return false;
     }
 
-    if (!thisComponent.state.productname) {
-        setErrors(thisComponent, "modifyProductError", "productname_empty", "name");
-        return false;
-    }
-
-    if (!thisComponent.state.category) {
-        setErrors(thisComponent, "modifyProductError", "productcategory_empty", "category");
-        return false;
-    }
-
-    if (!thisComponent.state.description) {
-        setErrors(thisComponent, "modifyProductError", "productdescription_empty", "description");
-        return false;
-    }
-
-    if (!thisComponent.state.price) {
-        setErrors(thisComponent, "modifyProductError", "productprice_empty", "price");
-        return false;
-    }
-    return true
+    return validationProduct(thisComponent, "modifyProductError");
 }
 
 export function createProductValidation(thisComponent: any) {
+    return validationProduct(thisComponent, "createProductError");
+}
+
+function validationProduct(thisComponent: any, formError: string) {
     if (!thisComponent.state.productname) {
-        setErrors(thisComponent, "createProductError", "productname_empty", "name");
+        setErrors(thisComponent, formError, "productname_empty", "name");
         return false;
     }
 
     if (!thisComponent.state.category) {
-        setErrors(thisComponent, "createProductError", "productcategory_empty", "category");
+        setErrors(thisComponent, formError, "productcategory_empty", "category");
         return false;
     }
 
     if (!thisComponent.state.description) {
-        setErrors(thisComponent, "createProductError", "productdescription_empty", "description");
+        setErrors(thisComponent, formError, "productdescription_empty", "description");
         return false;
     }
 
     if (!thisComponent.state.price) {
-        setErrors(thisComponent, "createProductError", "productprice_empty", "price");
+        setErrors(thisComponent, formError, "productprice_empty", "price");
         return false;
     }
-    return true;
 }
