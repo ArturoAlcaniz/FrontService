@@ -35,7 +35,7 @@ export function obtainAllCodesRequest(): AxiosPromise<any> {
 export function obtainCodeRequest(thisComponent: any): AxiosPromise<any> {
     return axios({
         method: "get",
-        url: `/api/users/obtainCode/${thisComponent.state.code}`,
+        url: `/api/users/obtainCode/${thisComponent.state.id}`,
         data: [],
     });
 }
