@@ -39,7 +39,7 @@ function checkoutRequest(thisComponent: any): AxiosPromise<any> {
         method: "post",
         url: "/api/users/checkout",
         data: {
-            products: thisComponent.state.productsToBuy
+            products: thisComponent.state.productsToBuy.map(p => p.id)
         }
     })
 }
