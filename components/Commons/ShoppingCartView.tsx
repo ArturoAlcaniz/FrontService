@@ -52,7 +52,7 @@ export default function ShoppingCartView(thisComponent: HeaderLogged) {
                 <p className="help form-feedback-ok">
                     {obtainTextTranslated["requestOK"][thisComponent.state.requestOK.get('checkoutOk')]}
                 </p>
-                { thisComponent.state.formError=='checkoutCoins' && CustomErrorMessage(msgError) }
+                { thisComponent.state.formError=='coins' && CustomErrorMessage(msgError) }
                 <div className="field">
                     <p className="control">
                         <button className="button" onClick={() => {checkout(thisComponent)}}>

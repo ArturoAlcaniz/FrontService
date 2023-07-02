@@ -252,10 +252,12 @@ async function checkout(thisComponent) {
             );
             thisComponent.setState({
                 productsToBuy: [],
+                coins: response.data.coins,
                 formError: "",
                 requestOK: lista,
                 requestErrors: new Map<string, string>(),
             });
+            setCookie('coins', response.data.coins);
         }  
     },
     (error) => {
