@@ -39,6 +39,9 @@ export default class HeaderLogged extends Component<any,any> {
             showLanguageOptions: false,
             showShoppingCart: false,
             redeemCodeActive: props.redeemCodeActive || false,
+            requestErrors: new Map<string, string>(),
+            requestOK: new Map<string, string>(),
+            formError: "",
         }
 
         this.notificationViewRef = createRef();
