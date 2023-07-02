@@ -37,7 +37,7 @@ function deleteProductRequest(thisComponent: any): AxiosPromise<any> {
 function checkoutRequest(thisComponent: any): AxiosPromise<any> {
     return axios({
         method: "post",
-        url: "/api/products/checkout",
+        url: "/api/users/checkout",
         data: {
             products: thisComponent.state.productsToBuy
         }
