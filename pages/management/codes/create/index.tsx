@@ -16,7 +16,7 @@ export default class CreateCodePage extends CustomBasicPageLogged{
             starts: "",
             ends: "",
             amount: 0,
-            coisCode: "0.0",
+            coinsCode: "0.0",
             componentName: "Create code | TI-Shop",
         }
         
