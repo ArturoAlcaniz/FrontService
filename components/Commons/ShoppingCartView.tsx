@@ -22,7 +22,7 @@ export default function ShoppingCartView(thisComponent: HeaderLogged) {
         const productsToBuyString: string = JSON.stringify(newProductsToBuy);
         setCookie('productsToBuy', productsToBuyString);
     }
-    let msgError = obtainTextTranslated["requestErrors"][this.state.requestErrors.get('checkoutError')]
+    let msgError = obtainTextTranslated["requestErrors"][thisComponent.state.requestErrors.get('checkoutError')]
 
     return(
         <div tabIndex={0} ref={thisComponent.notificationViewRef} id="shoppingCartView" className="box customBox shopping-cart">
