@@ -65,7 +65,9 @@
         "delete": "Delete",
         "add_shoppingCart": "Añadir a la cesta",
         "modify_code": "Modificar código",
-        "manage_codes": "Gestionar códigos"
+        "manage_codes": "Gestionar códigos",
+        "users": "Usuarios",
+        "checkout": "Realizar pedido"
     },
     "requestErrors": {
         "invalid_credentials": "Credenciales no válidas",

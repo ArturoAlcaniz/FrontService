@@ -65,7 +65,9 @@
         "delete": "Delete",
         "add_shoppingCart": "Add shopping cart",
         "modify_code": "Modify code",
-        "manage_codes": "Manage codes"
+        "manage_codes": "Manage codes",
+        "users": "Users",
+        "checkout": "Checkout"
 
     },
     "requestErrors": {

@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { setCookie } from '@root/utils/CookieHandler';
 import HeaderLogged from './HeaderLogged';
+import CustomErrorMessage from '@root/utils/CustomErrorMessage';
+import { checkout } from '@root/components/Market/MarketLogic';
 
 export default function ShoppingCartView(thisComponent: HeaderLogged) {
     let languageSelected = thisComponent.state.languageSelected
@@ -20,6 +22,7 @@ export default function ShoppingCartView(thisComponent: HeaderLogged) {
         const productsToBuyString: string = JSON.stringify(newProductsToBuy);
         setCookie('productsToBuy', productsToBuyString);
     }
+    let msgError = obtainTextTranslated["requestErrors"][this.state.requestErrors.get('checkoutError')]
 
     return(
         <div tabIndex={0} ref={thisComponent.notificationViewRef} id="shoppingCartView" className="box customBox shopping-cart">
@@ -45,6 +48,17 @@ export default function ShoppingCartView(thisComponent: HeaderLogged) {
                 <div className="shopping-cart-total">
                     <span className="lighter-text">Total: </span>
                     <span className="main-color-text">{Number(totalPrice)}</span>
+                </div>
+                <p className="help form-feedback-ok">
+                    {obtainTextTranslated["requestOK"][thisComponent.state.requestOK.get('checkoutOk')]}
+                </p>
+                { thisComponent.state.formError=='checkoutCoins' && CustomErrorMessage(msgError) }
+                <div className="field">
+                    <p className="control">
+                        <button className="button" onClick={() => {checkout(thisComponent)}}>
+                            {obtainTextTranslated["buttons"]["checkout"]}
+                        </button>
+                    </p>
                 </div>
             </div>
         </div>

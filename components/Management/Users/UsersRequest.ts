@@ -22,3 +22,11 @@ export function createUserRequest(userDto: CreateUserManagementDto): AxiosPromis
         }
     })
 }
+
+export function obtainUserRequest(username: string): AxiosPromise<any> {
+    return axios({
+        method: "get",
+        url: `/api/users/obtain/${username}`,
+        data: [],
+    })
+}

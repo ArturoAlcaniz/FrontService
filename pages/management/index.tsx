@@ -1,8 +1,9 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import money from "@assets/money.png";
+import users from "@assets/users.svg";
 import Image from 'next/image';
-import { handleGoCodesManage } from '@root/components/Management/ManagementLogic';
+import { handleGoCodesManage, handleGoUsersManage } from '@root/components/Management/ManagementLogic';
 
 
 export default class ManagementPage extends CustomBasicPageLogged{
@@ -37,6 +38,22 @@ export default class ManagementPage extends CustomBasicPageLogged{
                             </>
                             <p>
                                 <strong>{obtainTextTranslated["buttons"]["codes"]}</strong><br></br>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="box clickable" onClick={() => handleGoUsersManage()}>
+                        <div className="content">
+                            <>
+                                <Image 
+                                    src={users}
+                                    alt="Users Management"
+                                    width={300} 
+                                    height={200} 
+                                    style={{ width: '300px', height: '200px' }}   
+                                />
+                            </>
+                            <p>
+                                <strong>{obtainTextTranslated["buttons"]["users"]}</strong><br></br>
                             </p>
                         </div>
                     </div>

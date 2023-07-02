@@ -34,6 +34,16 @@ function deleteProductRequest(thisComponent: any): AxiosPromise<any> {
     });
 }
 
+function checkoutRequest(thisComponent: any): AxiosPromise<any> {
+    return axios({
+        method: "post",
+        url: "/api/products/checkout",
+        data: {
+            products: thisComponent.state.productsToBuy
+        }
+    })
+}
+
 function modifyProductRequest(thisComponent: any): AxiosPromise<any> {
     let formData = new FormData();
 
@@ -99,4 +109,5 @@ export {
     modifyProductRequest,
     deleteProductRequest,
     obtainAllProductsRequest,
+    checkoutRequest,
 };

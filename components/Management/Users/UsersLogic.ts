@@ -1,5 +1,5 @@
 import { CreateUserManagementDto } from "@entities-lib/src/requests/createUserManagement.dto";
-import { createUserRequest, obtainAllUsersRequest } from "./UsersRequest";
+import { createUserRequest, obtainAllUsersRequest, obtainUserRequest } from "./UsersRequest";
 
 function handleChangeCoins(event: any) {
     event.preventDefault();
@@ -70,9 +70,28 @@ async function handleObtainAllUsers(thisComponent) {
     );
 }
 
+async function handleObtainUser(thisComponent) {
+    await obtainUserRequest(thisComponent.state.initialUsername).then(
+        (response) => {
+            if (response.status == 200) {
+                thisComponent.setState({
+                    username: response.data.username,
+                    email: response.data.starts,
+                    rol: response.data.ends,
+                    coinsUser: response.data.coins
+                })
+            }
+        },
+        (error) => {
+            console.log(error);
+        }
+    )
+}
+
 export {
     handleChangeRol,
     handleCreateUser,
     handleObtainAllUsers,
-    handleChangeCoins
+    handleChangeCoins,
+    handleObtainUser
 };

@@ -6,6 +6,7 @@ import {
     obtainAllProductsRequest,
     obtainMyProductRequest,
     obtainMyProductsRequest,
+    checkoutRequest,
 } from "./MarketRequest";
 import {
     createProductValidation,
@@ -242,6 +243,34 @@ function handleAddProduct(event: any) {
     setCookie('productsToBuy', productsToBuyString);
 }
 
+async function checkout(thisComponent) {
+    await checkoutRequest(thisComponent).then((response) => {
+        if (response.status == 200) {
+            let lista: Map<string, string> = new Map<string, string>().set(
+                "checkoutOk",
+                response.data.message[0]
+            );
+            thisComponent.setState({
+                productsToBuy: [],
+                formError: "",
+                requestOK: lista,
+                requestErrors: new Map<string, string>(),
+            });
+        }  
+    },
+    (error) => {
+        let lista: Map<string, string> = new Map<string, string>().set(
+            "checkoutError",
+            error.response.data.message[0]
+        );
+        this.setState({
+            formError: error.response.data.formError,
+            requestOK: new Map<string, string>(),
+            requestErrors: lista,
+        });
+    });
+}
+
 export {
     handleCreateProduct,
     handleObtainMyProducts,
@@ -258,4 +287,5 @@ export {
     handleChangeEndsell,
     handleChangePrice,
     handleAddProduct,
+    checkout,
 };

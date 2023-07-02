@@ -4,6 +4,10 @@ function handleGoCodesManage() {
     Router.push("management/codes");
 }
 
+function handleGoUsersManage() {
+    Router.push("management/users");
+}
+
 function handleChangeCoins(event: any) {
     this.setState({coinsProduct: event.target.value});
 }
@@ -31,4 +35,5 @@ export {
     handleChangeStartCode,
     handleChangeEndCode,
     handleChangeAmount,
+    handleGoUsersManage,
 };
