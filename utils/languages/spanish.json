@@ -105,6 +105,7 @@
         "successfully_product_modified": "Producto modificado correctamente",
         "successfully_payment": "Pago realizado correctamente",
         "successfully_code_created": "Código creado correctamente",
-        "successfully_product_added": "Product añadido a la cesta correctamente"
+        "successfully_product_added": "Product añadido a la cesta correctamente",
+        "successfully_checkout": "Compra realizada con éxito"
     }
 }
