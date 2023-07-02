@@ -95,7 +95,8 @@
         "product_already_added": "Product already added to shopping cart",
         "code_not_exist": "Code not exist",
         "code_not_available": "Code not available",
-        "code_already_redeemed": "Code already redeemed"
+        "code_already_redeemed": "Code already redeemed",
+        "coins_not_available": "Insufficient balance"
     },
     "requestOK": {
         "successfully_logged_in": "User successfully logged in",

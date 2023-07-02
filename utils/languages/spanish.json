@@ -94,7 +94,8 @@
         "product_already_added": "Producto ya añadido a la cesta",
         "code_not_exist": "El codigo no existe",
         "code_not_available": "Código no disponible",
-        "code_already_redeemed": "Código ya canjeado"
+        "code_already_redeemed": "Código ya canjeado",
+        "coins_not_available": "Saldo insuficiente"
     },
     "requestOK": {
         "successfully_logged_in": "Usuario logeado correctamente",
