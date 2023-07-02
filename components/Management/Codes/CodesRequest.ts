@@ -6,7 +6,7 @@ export function createCodeRequest(thisComponent: any): AxiosPromise<any> {
         url: "/api/users/createCodeToken",
         data: {
             id: thisComponent.state.id,
-            coins: thisComponent.state.coins,
+            coins: thisComponent.state.coinsCode,
             starts: thisComponent.state.starts,
             ends: thisComponent.state.ends,
             amount: thisComponent.state.amount,

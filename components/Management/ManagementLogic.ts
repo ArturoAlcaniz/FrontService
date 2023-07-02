@@ -9,7 +9,7 @@ function handleGoUsersManage() {
 }
 
 function handleChangeCoins(event: any) {
-    this.setState({coinsProduct: event.target.value});
+    this.setState({coinsCode: event.target.value});
 }
 
 function handleChangeId(event: any) {
