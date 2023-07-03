@@ -258,6 +258,7 @@ async function checkout(thisComponent) {
                 requestErrors: new Map<string, string>(),
             });
             setCookie('coins', response.data.coins);
+            setCookie('productsToBuy', '');
         }  
     },
     (error) => {
