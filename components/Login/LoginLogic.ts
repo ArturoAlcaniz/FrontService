@@ -11,6 +11,7 @@ import {LoginGoogleDto} from "@entities-lib/src/requests/loginGoogle.dto";
 import {LoginDto} from "@entities-lib/src/requests/login.dto";
 import {SendCodeLoginDto} from "@entities-lib/src/requests/sendCodeLogin.dto";
 import { setCookie } from "@root/utils/CookieHandler";
+import Cookies from 'js-cookie';
 
 function handleButtonLoginGoogle() {
     const firebaseAuth = getAuth(firebaseApp);
@@ -38,6 +39,10 @@ function handleLoginToBack(thisComponent, idToken: string) {
                     requestOK: lista,
                     requestErrors: new Map<string, string>(),
                 });
+                const cookies = Cookies.get();
+                for (const cookie in cookies) {
+                  Cookies.remove(cookie);
+                }
                 setCookie('username', response.data.userName);
                 setCookie('email', response.data.email);
                 setCookie('coins', response.data.coins);
@@ -80,6 +85,10 @@ function handleLogin2(event: any) {
                     requestOK: lista,
                     requestErrors: new Map<string, string>(),
                 });
+                const cookies = Cookies.get();
+                for (const cookie in cookies) {
+                  Cookies.remove(cookie);
+                }
                 setCookie('username', response.data.userName);
                 setCookie('email', response.data.email);
                 setCookie('coins', response.data.coins);

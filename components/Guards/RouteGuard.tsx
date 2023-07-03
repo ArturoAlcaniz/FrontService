@@ -2,7 +2,6 @@ import axios from "axios";
 import { NextRouter, useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import { setCookie } from "@root/utils/CookieHandler";
-import Cookies from 'js-cookie';
 
 function RouteGuard({ children }) {
 
@@ -26,10 +25,6 @@ function RouteGuard({ children }) {
                 data: {},
             }).then((response: any) => {
                 if(response.status == 200){
-                    const cookies = Cookies.get();
-                    for (const cookie in cookies) {
-                      Cookies.remove(cookie);
-                    }
                     
                     setCookie('username', response.data.userName);
                     setCookie('admin', `${response.data.rol === "ADMIN"}`);
