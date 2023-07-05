@@ -30,3 +30,13 @@ export function obtainUserRequest(username: string): AxiosPromise<any> {
         data: [],
     })
 }
+
+export function deleteUserRequest(id): AxiosPromise<any> {
+    return axios({
+        method: "post",
+        url: "/api/users/deleteUser",
+        data: {
+            id: id
+        }
+    })
+}

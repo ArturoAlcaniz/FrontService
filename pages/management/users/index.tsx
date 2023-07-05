@@ -1,6 +1,6 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
-import { handleObtainAllUsers } from '@root/components/Management/Users/UsersLogic';
+import { handleObtainAllUsers, handleGoModifyUser, handleDeleteUser } from '@root/components/Management/Users/UsersLogic';
 import CenteredButton from '@root/components/Commons/CenteredButton';
 
 export default class UsersManagePage extends CustomBasicPageLogged{
@@ -31,13 +31,18 @@ export default class UsersManagePage extends CustomBasicPageLogged{
                             <thead>
                                 <th>{obtainTextTranslated["labels"]["user_name"]}</th>
                                 <th>{obtainTextTranslated["labels"]["user_email"]}</th>
+                                <th>{obtainTextTranslated["labels"]["actions"]}</th>
                             </thead>
                             <tbody>
-                                {this.state.codes && this.state.users.length>0 && this.state.users.map(user => {
+                                {this.state.users && this.state.users.length>0 && this.state.users.map(user => {
                                     return (
                                         <tr key={user.email}>
                                             <th>{user.name}</th>
                                             <td>{user.email}</td>
+                                            <td>
+                                                <button onClick={() => handleGoModifyUser(user.id)} className="button is-info actions">{obtainTextTranslated["buttons"]["edit"]}</button>
+                                                <button onClick={async () => {await handleDeleteUser(user.id,this)}} className="button is-danger actions">{obtainTextTranslated["buttons"]["delete"]}</button>
+                                            </td>
                                         </tr>
                                     );
                                 })}

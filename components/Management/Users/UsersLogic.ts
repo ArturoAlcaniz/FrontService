@@ -1,5 +1,6 @@
 import { CreateUserManagementDto } from "@entities-lib/src/requests/createUserManagement.dto";
-import { createUserRequest, obtainAllUsersRequest, obtainUserRequest } from "./UsersRequest";
+import { createUserRequest, obtainAllUsersRequest, obtainUserRequest, deleteUserRequest } from "./UsersRequest";
+import Router from "next/router";
 
 function handleChangeCoins(event: any) {
     event.preventDefault();
@@ -88,10 +89,32 @@ async function handleObtainUser(thisComponent) {
     )
 }
 
+async function handleGoModifyUser(ID: string) {
+    Router.push(`/management/users/modify?user=${ID}`, "/management/users/modify");
+
+}
+
+async function handleDeleteUser(id, thisComponent) {
+    await deleteUserRequest(id).then(
+        (response) => {
+            if(response.status == 200) {
+                let usersActual: Array<any> = thisComponent.state.users
+                let usersArray: Array<any> = usersActual.filter((user) => user.id != id)
+                thisComponent.setState({users: usersArray})
+            }
+        },
+        (error) => {
+            console.log(error);
+        }
+    )
+}
+
 export {
     handleChangeRol,
     handleCreateUser,
     handleObtainAllUsers,
     handleChangeCoins,
-    handleObtainUser
+    handleObtainUser,
+    handleGoModifyUser,
+    handleDeleteUser
 };

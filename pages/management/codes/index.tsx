@@ -47,8 +47,8 @@ export default class CodesManagePage extends CustomBasicPageLogged{
                                             <td>{code.ends}</td>
                                             <td>{code.amount}</td>
                                             <td>
-                                                <button onClick={() => handleGoModifyCode(code.id)} className="button is-info">{obtainTextTranslated["buttons"]["edit"]}</button>
-                                                <button onClick={async () => {await handleDeleteCode(code.id,this)}} className="button is-danger">{obtainTextTranslated["buttons"]["delete"]}</button>
+                                                <button onClick={() => handleGoModifyCode(code.id)} className="button is-info actions">{obtainTextTranslated["buttons"]["edit"]}</button>
+                                                <button onClick={async () => {await handleDeleteCode(code.id,this)}} className="button is-danger actions">{obtainTextTranslated["buttons"]["delete"]}</button>
                                             </td>
                                         </tr>
                                     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import money from "@assets/money.png";
-import users from "@assets/users.svg";
+import users from "@assets/users.png";
 import Image from 'next/image';
 import { handleGoCodesManage, handleGoUsersManage } from '@root/components/Management/ManagementLogic';
 
