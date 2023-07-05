@@ -49,7 +49,7 @@ export default class PaymentsPage extends CustomBasicPageLogged{
                         
                                 <PayPalScriptProvider
                                     options={{
-                                        "client-id": "ATybTlAE7_-nAfMs1l_KmQ9xpKakPpQHp0e3Cf4quc4nqNa3UMt0O6EmBdDVZPV-3rbaEFAPz-8sEYas"
+                                        "clientId": "ATybTlAE7_-nAfMs1l_KmQ9xpKakPpQHp0e3Cf4quc4nqNa3UMt0O6EmBdDVZPV-3rbaEFAPz-8sEYas"
                                     }}
                                 >
                                     <PayPalButtons
