@@ -1,4 +1,5 @@
 import { CreateUserManagementDto } from "@entities-lib/src/requests/createUserManagement.dto";
+import { ModifyUserManagementDto } from "@entities-lib/src/requests/editUserManagement.dto";
 import axios, {AxiosPromise} from "axios";
 
 export function obtainAllUsersRequest(): AxiosPromise<any> {
@@ -13,6 +14,20 @@ export function createUserRequest(userDto: CreateUserManagementDto): AxiosPromis
     return axios({
         method: "post",
         url: "/api/users/createUser",
+        data: {
+            username: userDto.username,
+            email: userDto.email,
+            pass: userDto.pass,
+            rol: userDto.rol,
+            coins: userDto.coins
+        }
+    })
+}
+
+export function modifyUserRequest(userDto: ModifyUserManagementDto): AxiosPromise<any> {
+    return axios({
+        method: "post",
+        url: "/api/users/modifyUser",
         data: {
             username: userDto.username,
             email: userDto.email,

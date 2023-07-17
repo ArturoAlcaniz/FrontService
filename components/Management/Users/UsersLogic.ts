@@ -1,6 +1,7 @@
 import { CreateUserManagementDto } from "@entities-lib/src/requests/createUserManagement.dto";
-import { createUserRequest, obtainAllUsersRequest, obtainUserRequest, deleteUserRequest } from "./UsersRequest";
+import { createUserRequest, obtainAllUsersRequest, obtainUserRequest, deleteUserRequest, modifyUserRequest } from "./UsersRequest";
 import Router from "next/router";
+import { ModifyUserManagementDto } from "@entities-lib/src/requests/editUserManagement.dto";
 
 function handleChangeCoins(event: any) {
     event.preventDefault();
@@ -32,7 +33,6 @@ async function handleCreateUser(event: any) {
                         formError: "",
                         requestOK: lista,
                         requestErrors: new Map<string, string>(),
-                        coins: response.data.coins,
                     },
                     this.headerViewRef.current.setState({
                         coins: response.data.coins,
@@ -43,6 +43,48 @@ async function handleCreateUser(event: any) {
         (error) => {
             let lista: Map<string, string> = new Map<string, string>().set(
                 "createUserError",
+                error.response.data.message[0]
+            );
+            this.setState({
+                formError: error.response.data.formError,
+                requestOK: new Map<string, string>(),
+                requestErrors: lista,
+            });
+        }
+    );
+}
+
+async function handleModifyUser(event: any) {
+    event.preventDefault();
+    let userDto: ModifyUserManagementDto = {
+        username: this.state.username,
+        pass: this.state.password,
+        email: this.state.email,
+        rol: this.state.rol,
+        coins: this.state.coinsUser,
+    }
+    await modifyUserRequest(userDto).then(
+        (response) => {
+            if (response.status == 200) {
+                let lista: Map<string, string> = new Map<string, string>().set(
+                    "modifyUserOk",
+                    response.data.message[0]
+                );
+                this.setState(
+                    {
+                        formError: "",
+                        requestOK: lista,
+                        requestErrors: new Map<string, string>(),
+                    },
+                    this.headerViewRef.current.setState({
+                        coins: response.data.coins,
+                    })
+                );
+            }
+        },
+        (error) => {
+            let lista: Map<string, string> = new Map<string, string>().set(
+                "modifyUserError",
                 error.response.data.message[0]
             );
             this.setState({
