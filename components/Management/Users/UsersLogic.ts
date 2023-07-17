@@ -76,9 +76,9 @@ async function handleObtainUser(thisComponent) {
         (response) => {
             if (response.status == 200) {
                 thisComponent.setState({
-                    username: response.data.username,
-                    email: response.data.starts,
-                    rol: response.data.ends,
+                    username: response.data.userName,
+                    email: response.data.email,
+                    rol: response.data.rol,
                     coinsUser: response.data.coins
                 })
             }

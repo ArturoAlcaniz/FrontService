@@ -67,7 +67,8 @@
         "modify_code": "Modificar código",
         "manage_codes": "Gestionar códigos",
         "users": "Usuarios",
-        "checkout": "Realizar pedido"
+        "checkout": "Realizar pedido",
+        "modify_user": "Modificar usuario"
     },
     "requestErrors": {
         "invalid_credentials": "Credenciales no válidas",

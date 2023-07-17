@@ -94,7 +94,7 @@ export default class ModifyCodePage extends CustomBasicPageLogged{
                                     </div>
                                 </div>
                                 <p className="help form-feedback-ok">
-                                    {obtainTextTranslated["requestOK"][this.state.requestOK.get('createCodeOk')]}
+                                    {obtainTextTranslated["requestOK"][this.state.requestOK.get('modifyCodeOk')]}
                                 </p>
                                 <div className="field">
                                     { formError=='access' && CustomErrorMessage(msgError) }

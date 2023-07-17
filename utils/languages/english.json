@@ -67,7 +67,8 @@
         "modify_code": "Modify code",
         "manage_codes": "Manage codes",
         "users": "Users",
-        "checkout": "Checkout"
+        "checkout": "Checkout",
+        "modify_user": "Modify user"
 
     },
     "requestErrors": {

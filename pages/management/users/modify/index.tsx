@@ -152,13 +152,13 @@ export default class CreateUserPage extends CustomBasicPageLogged{
                                 </div>
 
                                 <p className="help form-feedback-ok">
-                                    {obtainTextTranslated["requestOK"][this.state.requestOK.get('createUserOk')]}
+                                    {obtainTextTranslated["requestOK"][this.state.requestOK.get('modifyUserOk')]}
                                 </p>
                                 <div className="field">
                                     { formError=='access' && CustomErrorMessage(msgError) }
                                     <p className="control">
                                         <button className="button">
-                                            {obtainTextTranslated["buttons"]["create_user"]}
+                                            {obtainTextTranslated["buttons"]["modify_user"]}
                                         </button>
                                     </p>
                                 </div>
