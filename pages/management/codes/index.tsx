@@ -27,7 +27,7 @@ export default class CodesManagePage extends CustomBasicPageLogged{
                 {CenteredButton("/management/codes/create", obtainTextTranslated["buttons"]["create_code"])}
 
                 <div className="pageCentered">
-                    <div className="ListCodes">
+                    <div className="table-container">
                         <table className="table">
                             <thead>
                                 <th>{obtainTextTranslated["labels"]["code_name"]}</th>

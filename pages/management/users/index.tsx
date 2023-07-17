@@ -26,18 +26,18 @@ export default class UsersManagePage extends CustomBasicPageLogged{
                 {super.render()}
                 {CenteredButton("/management/users/create", obtainTextTranslated["buttons"]["create_user"])}
                 <div className="pageCentered">
-                    <div className="ListCodes">
+                    <div className="table-container">
                         <table className="table">
                             <thead>
-                                <th>{obtainTextTranslated["labels"]["user_name"]}</th>
-                                <th>{obtainTextTranslated["labels"]["user_email"]}</th>
+                                <th>{obtainTextTranslated["labels"]["usuario"]}</th>
+                                <th>{obtainTextTranslated["labels"]["correo"]}</th>
                                 <th>{obtainTextTranslated["labels"]["actions"]}</th>
                             </thead>
                             <tbody>
                                 {this.state.users && this.state.users.length>0 && this.state.users.map(user => {
                                     return (
                                         <tr key={user.email}>
-                                            <th>{user.name}</th>
+                                            <th>{user.userName}</th>
                                             <td>{user.email}</td>
                                             <td>
                                                 <button onClick={() => handleGoModifyUser(user.id)} className="button is-info actions">{obtainTextTranslated["buttons"]["edit"]}</button>

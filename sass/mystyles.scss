@@ -685,3 +685,26 @@ a.navbar-custom {
 .actions {
     margin: 0, 10px;
 }
+
+.table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container>table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8px;
+    border: 1px solid #ccc !important;    
+}
+
+.table-container>table td button {
+    margin-right: 8px;
+}
