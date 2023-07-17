@@ -128,7 +128,7 @@ export default class CreateUserPage extends CustomBasicPageLogged{
                                     { formError=='cPassword' && CustomErrorMessage(msgError) }
                                 </div>
                                 <div className="field">
-                                    <label>
+                                    <label className="label">
                                         {obtainTextTranslated["labels"]["rol"]}
                                     </label>
                                     <div className="control">
