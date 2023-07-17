@@ -1,5 +1,5 @@
 {
-    "name": "TFG-Frontend",
+    "name": "@arturoalcaniz/front-service",
     "version": "1.4.1",
     "description": "",
     "main": "index.js",
@@ -21,10 +21,11 @@
         "axios": "1.4.0",
         "bulma": "0.9.4",
         "express": "4.18.2",
-        "firebase": "^9.14.0",
+        "firebase": "10.0.0",
         "flag-icons": "6.7.0",
         "js-cookie": "3.0.5",
         "multer-s3": "3.0.1",
+        "next": "13.4.10",
         "next-cookies": "2.0.3",
         "next-images": "1.8.5",
         "prettier": "3.0.0",
@@ -34,8 +35,7 @@
         "react-router-dom": "6.14.1",
         "sass": "1.63.6",
         "sharp": "0.32.1",
-        "shortid": "2.2.16",
-        "next": "13.4.8"
+        "shortid": "2.2.16"
     },
     "devDependencies": {
         "@babel/preset-react": "7.18.6",
@@ -46,7 +46,7 @@
         "@types/react": "18.2.14",
         "@types/react-router": "5.1.20",
         "@types/shortid": "0.0.29",
-        "babel-loader": "^8.0.6",
+        "babel-loader": "8.3.0",
         "eslint": "8.44.0",
         "eslint-config-next": "13.4.8",
         "targets-webpack-plugin": "4.0.0",

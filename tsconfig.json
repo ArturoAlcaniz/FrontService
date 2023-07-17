@@ -34,7 +34,7 @@
         "allowJs": true,
         "skipLibCheck": true,
         "strict": false,
-        "forceConsistentCasingInFileNames": true,
+        "forceConsistentCasingInFileNames": false,
         "noEmit": true,
         "incremental": true,
         "esModuleInterop": true,
@@ -51,7 +51,7 @@
         "typeRoots": [
             "./node_modules/@types",
             "src/types"
-        ]
+        ],
     },
     "include": [
         "next-env.d.ts",
