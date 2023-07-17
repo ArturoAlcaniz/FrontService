@@ -72,6 +72,7 @@ function modifyProductRequest(thisComponent: any): AxiosPromise<any> {
 }
 
 function createProductRequest(thisComponent: any): AxiosPromise<any> {
+    console.log("Creating product")
     let formData = new FormData();
 
     formData.append("productname", thisComponent.state.productname);
@@ -85,7 +86,12 @@ function createProductRequest(thisComponent: any): AxiosPromise<any> {
         for (const image of thisComponent.state.images) {
             formData.append("images", image);
         }
-        return axios.post("/api/products/create", formData, {headers: { 'Content-Type': 'multipart/form-data' }});
+        return axios({
+            method: "post",
+            url: "/api/products/create", 
+            data: formData
+        });
+
     } else {
         return axios({
             method: "post",
