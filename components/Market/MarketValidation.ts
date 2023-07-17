@@ -33,4 +33,5 @@ function validationProduct(thisComponent: any, formError: string) {
         setErrors(thisComponent, formError, "productprice_empty", "price");
         return false;
     }
+    return true;
 }

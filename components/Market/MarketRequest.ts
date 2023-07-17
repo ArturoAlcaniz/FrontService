@@ -72,7 +72,6 @@ function modifyProductRequest(thisComponent: any): AxiosPromise<any> {
 }
 
 function createProductRequest(thisComponent: any): AxiosPromise<any> {
-    console.log("Creating product")
     let formData = new FormData();
 
     formData.append("productname", thisComponent.state.productname);
