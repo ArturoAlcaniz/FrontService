@@ -158,5 +158,6 @@ export {
     handleChangeCoins,
     handleObtainUser,
     handleGoModifyUser,
-    handleDeleteUser
+    handleDeleteUser,
+    handleModifyUser
 };

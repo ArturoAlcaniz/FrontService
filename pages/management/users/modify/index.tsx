@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomBasicPageLogged from '@root/components/CustomBasicPageLogged';
 import CustomErrorMessage from '@root/utils/CustomErrorMessage';
-import { handleChangeCoins, handleCreateUser, handleChangeRol, handleObtainUser } from '@root/components/Management/Users/UsersLogic';
+import { handleChangeCoins, handleModifyUser, handleChangeRol, handleObtainUser } from '@root/components/Management/Users/UsersLogic';
 import { handleChangeConfirmPassword, handleChangeEmail, handleChangePassword, handleChangeUsername, loadPasswordStrength, showCPass, showPass } from "@root/components/Register/RegisterLogic"
 import passwordStrengthMeter from '@root/components/Commons/PasswordStrengthMeter';
 import shortid from 'shortid';
@@ -65,7 +65,7 @@ export default class CreateUserPage extends CustomBasicPageLogged{
             <>
                 {super.render()}
                 <div className="pageCentered">
-                    <form onSubmit={handleCreateUser.bind(this)}>
+                    <form onSubmit={handleModifyUser.bind(this)}>
                         <div className="card createProductForm">
                             <div className="card-content">
 
