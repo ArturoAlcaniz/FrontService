@@ -708,3 +708,12 @@ table {
 .table-container>table td button {
     margin-right: 8px;
 }
+
+.ListManagementSections {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.ListManagementSections li {
+    margin: 10px;
+}

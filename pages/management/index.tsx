@@ -25,38 +25,44 @@ export default class ManagementPage extends CustomBasicPageLogged{
             <div>
                 {super.render()}
                 <div className="pageCentered">
-                    <div className="box clickable" onClick={() => handleGoCodesManage()}>
-                        <div className="content">
-                            <>
-                                <Image 
-                                    src={money}
-                                    alt="Codes Management"
-                                    width={300} 
-                                    height={200} 
-                                    style={{ width: '300px', height: '200px' }}   
-                                />
-                            </>
-                            <p>
-                                <strong>{obtainTextTranslated["buttons"]["codes"]}</strong><br></br>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="box clickable" onClick={() => handleGoUsersManage()}>
-                        <div className="content">
-                            <>
-                                <Image 
-                                    src={users}
-                                    alt="Users Management"
-                                    width={300} 
-                                    height={200} 
-                                    style={{ width: '300px', height: '200px' }}   
-                                />
-                            </>
-                            <p>
-                                <strong>{obtainTextTranslated["buttons"]["users"]}</strong><br></br>
-                            </p>
-                        </div>
-                    </div>
+                    <ul className="ListManagementSections">
+                        <li key="Management-codes">
+                            <div className="box clickable" onClick={() => handleGoCodesManage()}>
+                                <div className="content">
+                                    <>
+                                        <Image 
+                                            src={money}
+                                            alt="Codes Management"
+                                            width={300} 
+                                            height={200} 
+                                            style={{ width: '300px', height: '200px' }} 
+                                        />
+                                    </>
+                                    <p>
+                                        <strong>{obtainTextTranslated["buttons"]["codes"]}</strong><br></br>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li key="Management-users">
+                            <div className="box clickable" onClick={() => handleGoUsersManage()}>
+                                <div className="content">
+                                    <>
+                                        <Image 
+                                            src={users}
+                                            alt="Users Management"
+                                            width={300} 
+                                            height={200} 
+                                            style={{ width: '300px', height: '200px' }} 
+                                        />
+                                    </>
+                                    <p>
+                                        <strong>{obtainTextTranslated["buttons"]["users"]}</strong><br></br>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         )
