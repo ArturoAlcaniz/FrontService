@@ -391,7 +391,7 @@ a.navbar-custom {
 
 @media (max-width: 1080px) {
     .ListProducts {
-        margin-top: calc(250% - ((250% - 0) * (100vw - 360px) / (1080 - 360)));
+        margin-top: calc(250% - 155vw);
     }
 }
 
