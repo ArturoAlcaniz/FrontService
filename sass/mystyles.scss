@@ -387,12 +387,8 @@ a.navbar-custom {
     flex-flow: row wrap;
     margin-left: 6%;
     margin-right: 6%;
-}
-
-@media (max-width: 1080px) {
-    .ListProducts {
-        margin-top: calc(250% - 155vw);
-    }
+    position: absolute;
+    top: 5%;
 }
 
 .ListProducts li {
