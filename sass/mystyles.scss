@@ -389,6 +389,12 @@ a.navbar-custom {
     margin-right: 6%;
 }
 
+@media (max-width: 1080px) {
+    .ListProducts {
+      margin-top: 250%;
+    }
+}
+
 .ListProducts li {
     margin: 10px;
 }
