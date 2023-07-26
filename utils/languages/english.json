@@ -68,7 +68,8 @@
         "manage_codes": "Manage codes",
         "users": "Users",
         "checkout": "Checkout",
-        "modify_user": "Modify user"
+        "modify_user": "Modify user",
+        "downloadAPK": "Download APK"
 
     },
     "requestErrors": {

@@ -52,6 +52,11 @@ export default class Header extends Component<any,any> {
 
                 <div id="navbarBasicExample" className={styleNavbarMenu}>
                     <div className="navbar-start">
+                        <div className="downloadAPK">
+                            <a href="/TISHOP.apk" className="navbar-custom">
+                                {obtainTextTranslated["buttons"]["downloadAPK"]}
+                            </a>
+                        </div>
                     </div>
                     <div className="navbar-end">
                         {LanguageSelect(this)}

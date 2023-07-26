@@ -68,7 +68,8 @@
         "manage_codes": "Gestionar códigos",
         "users": "Usuarios",
         "checkout": "Realizar pedido",
-        "modify_user": "Modificar usuario"
+        "modify_user": "Modificar usuario",
+        "downloadAPK": "Descargar APK"
     },
     "requestErrors": {
         "invalid_credentials": "Credenciales no válidas",
